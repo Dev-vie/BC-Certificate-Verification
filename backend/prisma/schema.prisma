@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Institution {
+  id                Int           @id @default(autoincrement())
+  name              String
+  email             String        @unique
+  password          String?
+  googleId          String?       @unique
+  avatar            String?
+  isVerified        Boolean       @default(false)
+  verifyCode        String?
+  verifyCodeExpiry  DateTime?
+  resetCode         String?
+  resetCodeExpiry   DateTime?
+  refreshTokenHash    String?
+  refreshTokenExpiry  DateTime?
+  twoFactorEnabled    Boolean       @default(false)
+  twoFactorSecret     String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  templates         Template[]
+  certificates      Certificate[]
+}
+
+model Template {
+  id            Int           @id @default(autoincrement())
+  title         String
+  filePath      String
+  placeholders  Json
+  institutionId Int
+  institution   Institution   @relation(fields: [institutionId], references: [id])
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  certificates  Certificate[]
+}
+
+model Certificate {
+  id             Int         @id @default(autoincrement())
+  certificateId  String      @unique
+  recipientName  String
+  recipientId    String
+  recipientEmail String
+  course         String
+  grade          String
+  issueDate      DateTime
+  status         String      @default("issued")
+  pdfPath         String?
+  qrCode          String?
+  hash            String?
+  txHash          String?
+  blockNumber     Int?
+  contractAddress String?
+  institutionId  Int
+  institution    Institution @relation(fields: [institutionId], references: [id])
+  templateId     Int
+  template       Template    @relation(fields: [templateId], references: [id])
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}

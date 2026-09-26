@@ -1,0 +1,17 @@
+{
+  "name": "bc-certificate-blockchain",
+  "version": "1.0.0",
+  "description": "Hardhat workspace — CertificateVerification smart contract",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat",
+    "deploy:amoy": "hardhat run scripts/deploy.js --network amoy",
+    "wallet:check": "node scripts/wallet-check.js",
+    "verify": "hardhat verify --network amoy"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "hardhat": "^2.28.6"
+  }
+}
