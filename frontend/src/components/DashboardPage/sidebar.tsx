@@ -81,16 +81,16 @@ export const Sidebar = () => {
           <Link
             to="/home"
             className="flex items-center gap-2.5 hover:opacity-80 transition-opacity cursor-pointer overflow-hidden"
-            title="Authentix Home"
+            title="VeriCert Home"
           >
             <img
               src={theme === "light" ? "/logo-dark.png" : "/logo.png"}
-              alt="Authentix Logo"
+              alt="VeriCert Logo"
               className="w-9 h-9 object-contain shrink-0"
             />
             {(!isCollapsed || isMobile) && (
               <span className="text-[17px] font-bold text-foreground tracking-tight whitespace-nowrap">
-                Authenti<span className="text-[#3D876C]">x</span>
+                Veri<span className="text-blue-500">Cert</span>
               </span>
             )}
           </Link>

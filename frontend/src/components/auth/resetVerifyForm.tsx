@@ -106,10 +106,10 @@ const ResetVerifyForm: React.FC = () => {
         backText="Back to login"
       />
 
-      <div className="w-full lg:w-[42%] flex flex-col justify-center p-6 sm:p-10 md:p-14 relative bg-slate-900/80 backdrop-blur-2xl text-white overflow-hidden my-4 sm:m-4 rounded-3xl shadow-2xl shadow-emerald-950/40 select-none border border-white/15">
+      <div className="w-full lg:w-[42%] flex flex-col justify-center p-6 sm:p-10 md:p-14 relative bg-slate-900/80 backdrop-blur-2xl text-white overflow-hidden my-4 sm:m-4 rounded-3xl shadow-2xl shadow-blue-950/40 select-none border border-white/15">
         <div className="max-w-md w-full mx-auto relative z-10">
           <div className="mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/30 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/30 shadow-sm">
               <KeyRound className="w-6 h-6" />
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -122,7 +122,7 @@ const ResetVerifyForm: React.FC = () => {
 
           <div className="relative">
             {success && (
-              <div className="absolute inset-0 bg-emerald-600/95 backdrop-blur-md text-white flex flex-col items-center justify-center z-20 p-6 text-center rounded-2xl animate-fade-in shadow-xl">
+              <div className="absolute inset-0 bg-blue-600/95 backdrop-blur-md text-white flex flex-col items-center justify-center z-20 p-6 text-center rounded-2xl animate-fade-in shadow-xl">
                 <motion.div
                   initial={{ scale: 0.5, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -131,7 +131,7 @@ const ResetVerifyForm: React.FC = () => {
                   <BadgeCheck className="w-10 h-10 text-white stroke-[2.5]" />
                 </motion.div>
                 <h3 className="text-xl font-bold">Password Reset!</h3>
-                <p className="text-emerald-100 text-sm mt-2 max-w-xs">
+                <p className="text-blue-100 text-sm mt-2 max-w-xs">
                   Your password has been updated. Redirecting to login...
                 </p>
               </div>
@@ -164,7 +164,7 @@ const ResetVerifyForm: React.FC = () => {
                       onChange={(e) => handleOtpChange(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(index, e)}
                       onPaste={handlePaste}
-                      className="w-12 h-14 text-center text-xl font-bold rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 transition-all text-white shadow-sm"
+                      className="w-12 h-14 text-center text-xl font-bold rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition-all text-white shadow-sm"
                     />
                   ))}
                 </div>
@@ -177,7 +177,7 @@ const ResetVerifyForm: React.FC = () => {
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     placeholder="New password"
-                    className="w-full px-4 py-3.5 pr-12 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 transition-all text-white placeholder:text-slate-400 text-sm shadow-sm"
+                    className="w-full px-4 py-3.5 pr-12 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition-all text-white placeholder:text-slate-400 text-sm shadow-sm"
                   />
                   <button
                     type="button"
@@ -199,14 +199,14 @@ const ResetVerifyForm: React.FC = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm new password"
-                  className="w-full px-4 py-3.5 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 transition-all text-white placeholder:text-slate-400 text-sm shadow-sm"
+                  className="w-full px-4 py-3.5 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition-all text-white placeholder:text-slate-400 text-sm shadow-sm"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full mt-2 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50 active:scale-[0.99] transition-all cursor-pointer"
+                className="w-full mt-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-950/50 active:scale-[0.99] transition-all cursor-pointer"
               >
                 {isLoading ? (
                   <>

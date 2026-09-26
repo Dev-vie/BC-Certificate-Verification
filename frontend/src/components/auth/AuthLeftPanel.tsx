@@ -26,8 +26,8 @@ export const AuthLeftPanel: React.FC<AuthLeftPanelProps> = ({
   return (
     <div className="relative hidden lg:flex lg:w-[58%] flex-col justify-between p-6 sm:p-10 xl:p-12 text-white overflow-hidden my-4 select-none">
 
-      <div className="absolute top-1/3 -left-20 w-[400px] h-[400px] rounded-full bg-emerald-500/15 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-[350px] h-[350px] rounded-full bg-teal-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 -left-20 w-[400px] h-[400px] rounded-full bg-blue-500/15 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-[350px] h-[350px] rounded-full bg-cyan-500/10 blur-[100px] pointer-events-none" />
 
       {/* Top Section: Back button on top left */}
       <div className="flex items-center justify-start z-10 w-full mb-6">
@@ -44,11 +44,11 @@ export const AuthLeftPanel: React.FC<AuthLeftPanelProps> = ({
         <div className="flex items-center justify-center gap-4 sm:gap-5 select-none">
           <img
             src="/logo.png"
-            alt="Authentix Logo"
-            className="w-20 h-20 md:w-26 md:h-26 object-contain drop-shadow-[0_8px_24px_rgba(61,135,108,0.2)] hover:scale-105 transition-transform duration-300"
+            alt="VeriCert Logo"
+            className="w-20 h-20 md:w-26 md:h-26 object-contain drop-shadow-[0_8px_24px_rgba(59,130,246,0.3)] hover:scale-105 transition-transform duration-300"
           />
           <span className="text-4xl md:text-5xl font-black tracking-widest text-white uppercase">
-            AUTHENTI<span className="text-[#3D876C]">X</span>
+            VERI<span className="text-blue-500">CERT</span>
           </span>
         </div>
 

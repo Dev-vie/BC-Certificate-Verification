@@ -45,7 +45,7 @@ export const SignInModal: React.FC<SignInModalProps> = ({ isOpen, onClose }) => 
             <Shield className="w-5.5 h-5.5 text-white" />
           </div>
           <span className="text-2xl font-bold tracking-tight text-[var(--lp-foreground)] drop-shadow-sm">
-            Authentix
+            VeriCert
           </span>
         </div>
 

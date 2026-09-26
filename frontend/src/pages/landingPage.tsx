@@ -12,17 +12,17 @@ function LandingPage() {
   return (
     <div
       style={{
-        '--lp-background': '#0c0f19',
-        '--lp-foreground': '#ffffff',
+        '--lp-background': '#0f172a',
+        '--lp-foreground': '#f8fafc',
         '--lp-muted': '#94a3b8',
-        '--lp-primary': '#50a083',
-        '--lp-secondary': 'rgba(61, 135, 108, 0.08)',
-        '--lp-accent': '#50a083',
-        '--lp-border': 'rgba(255, 255, 255, 0.08)',
-        '--font-sans': '"Plus Jakarta Sans", system-ui, -apple-system, sans-serif',
-        fontFamily: '"Plus Jakarta Sans", system-ui, -apple-system, sans-serif',
+        '--lp-primary': '#3b82f6',
+        '--lp-secondary': 'rgba(59, 130, 246, 0.15)',
+        '--lp-accent': '#60a5fa',
+        '--lp-border': 'rgba(255, 255, 255, 0.1)',
+        '--font-sans': '"Inter", system-ui, -apple-system, sans-serif',
+        fontFamily: '"Inter", system-ui, -apple-system, sans-serif',
       } as React.CSSProperties}
-      className="relative min-h-screen text-[var(--lp-foreground)] font-sans selection:bg-[var(--lp-primary)] selection:text-white overflow-x-hidden bg-[var(--lp-background)]"
+      className="relative min-h-screen text-[var(--lp-foreground)] font-sans selection:bg-[var(--lp-primary)] selection:text-white overflow-x-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900"
     >
 
       {/* Subtle background glow spots */}

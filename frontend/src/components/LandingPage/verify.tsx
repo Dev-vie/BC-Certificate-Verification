@@ -75,7 +75,7 @@ export function Verify() {
       const { boundingBox, cornerPoints } = detectedCode;
       if (!boundingBox) return;
 
-      ctx.strokeStyle = "#50A083";
+      ctx.strokeStyle = "#3b82f6";
       ctx.lineWidth = 4;
       ctx.lineJoin = "round";
       ctx.strokeRect(
@@ -163,11 +163,11 @@ export function Verify() {
         delay={0}
       >
         <div id="verify-portal" className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#3D876C]/10 border border-[#3D876C]/30 text-[#4ca385] text-[10px] font-bold uppercase tracking-widest mb-4">
-            <ShieldCheck size={12} className="text-[#4ca385]" /> Cryptographic Verification Portal
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 text-[#60a5fa] text-[10px] font-bold uppercase tracking-widest mb-4">
+            <ShieldCheck size={12} className="text-[#60a5fa]" /> Cryptographic Verification Portal
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4">
-            Verify Any Certificate <span className="bg-gradient-to-r from-[#4ca385] to-teal-400 bg-clip-text text-transparent">Instantly</span>
+            Verify Any Certificate <span className="bg-gradient-to-r from-[#60a5fa] to-cyan-400 bg-clip-text text-transparent">Instantly</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-6">
             No account needed. Just upload a certificate PDF or scan a QR code.
@@ -179,7 +179,7 @@ export function Verify() {
               onClick={() => setIsHowItWorksOpen(true)}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all cursor-pointer shadow-sm"
             >
-              <CircleHelp size={14} className="text-[#3D876C]" />
+              <CircleHelp size={14} className="text-[#3b82f6]" />
               <span>How does verification work?</span>
             </button>
           </div>
@@ -201,11 +201,11 @@ export function Verify() {
                       handleReset();
                     }}
                     className={`flex-1 py-3 px-4 rounded-xl flex justify-center items-center gap-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer select-none ${isSelected
-                      ? "bg-[#3D876C]/15 text-[#4ca385] border border-[#3D876C]/30 shadow-sm"
+                      ? "bg-[#3b82f6]/15 text-[#60a5fa] border border-[#3b82f6]/30 shadow-sm"
                       : "border border-transparent text-slate-400 hover:text-white hover:bg-white/5"
                       }`}
                   >
-                    <IconComp className={`w-4 h-4 ${isSelected ? "text-[#4ca385]" : "text-slate-400"}`} />
+                    <IconComp className={`w-4 h-4 ${isSelected ? "text-[#60a5fa]" : "text-slate-400"}`} />
                     {tab.label}
                   </button>
                 );
@@ -240,7 +240,7 @@ export function Verify() {
                             if (file) handleFileUpload(file);
                           }}
                           onClick={() => fileInputRef.current?.click()}
-                          className="border-2 border-dashed border-white/10 hover:border-[#3D876C]/60 bg-slate-900/30 hover:bg-slate-900/60 rounded-2xl p-10 flex flex-col items-center justify-center text-center transition-all cursor-pointer group shadow-inner relative overflow-hidden"
+                          className="border-2 border-dashed border-white/10 hover:border-[#3b82f6]/60 bg-slate-900/30 hover:bg-slate-900/60 rounded-2xl p-10 flex flex-col items-center justify-center text-center transition-all cursor-pointer group shadow-inner relative overflow-hidden"
                         >
                           <input
                             ref={fileInputRef}
@@ -252,24 +252,24 @@ export function Verify() {
                               if (file) handleFileUpload(file);
                             }}
                           />
-                          <div className="w-14 h-14 rounded-2xl bg-[#3D876C]/10 text-[#4ca385] border border-[#3D876C]/20 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:bg-[#3D876C]/20 group-hover:border-[#3D876C]/40 transition-all duration-300 relative">
+                          <div className="w-14 h-14 rounded-2xl bg-[#3b82f6]/10 text-[#60a5fa] border border-[#3b82f6]/20 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:bg-[#3b82f6]/20 group-hover:border-[#3b82f6]/40 transition-all duration-300 relative">
                             {isCalculatingHash || isFetching ? (
-                              <Loader2 className="w-6 h-6 animate-spin text-[#4ca385]" />
+                              <Loader2 className="w-6 h-6 animate-spin text-[#60a5fa]" />
                             ) : (
                               <>
                                 <Upload className="w-6 h-6" />
                                 <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4ca385] opacity-75"></span>
-                                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#4ca385]"></span>
+                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#60a5fa] opacity-75"></span>
+                                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#60a5fa]"></span>
                                 </span>
                               </>
                             )}
                           </div>
-                          <p className="text-sm font-bold text-white group-hover:text-[#4ca385] transition-colors">
+                          <p className="text-sm font-bold text-white group-hover:text-[#60a5fa] transition-colors">
                             {selectedFile ? selectedFile.name : "Drag and drop your PDF certificate here"}
                           </p>
                           <p className="text-xs text-slate-400 mt-1.5 font-medium">
-                            or <span className="text-[#4ca385] font-bold group-hover:underline">browse files</span> from your device
+                            or <span className="text-[#60a5fa] font-bold group-hover:underline">browse files</span> from your device
                           </p>
                           <p className="text-[10px] text-slate-500 mt-3 font-semibold uppercase tracking-wider">
                             PDF Format Only &bull; Max 20MB
@@ -283,7 +283,7 @@ export function Verify() {
                               size="sm"
                               onClick={() => selectedFile && handleFileUpload(selectedFile)}
                               disabled={isCalculatingHash || isFetching}
-                              className="bg-[#3D876C] hover:bg-[#2C6450] text-white"
+                              className="bg-[#3b82f6] hover:bg-[#2563eb] text-white"
                             >
                               {isCalculatingHash || isFetching ? "Verifying..." : "Verify Certificate"}
                             </Button>
@@ -297,10 +297,10 @@ export function Verify() {
                             <div className="relative w-64 h-64 sm:w-72 sm:h-72 border border-white/15 rounded-3xl overflow-hidden bg-black shadow-inner">
                               
                               {/* Finder Corners */}
-                              <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#4ca385] z-30 pointer-events-none rounded-tl-sm" />
-                              <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[#4ca385] z-30 pointer-events-none rounded-tr-sm" />
-                              <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[#4ca385] z-30 pointer-events-none rounded-bl-sm" />
-                              <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#4ca385] z-30 pointer-events-none rounded-br-sm" />
+                              <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#60a5fa] z-30 pointer-events-none rounded-tl-sm" />
+                              <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[#60a5fa] z-30 pointer-events-none rounded-tr-sm" />
+                              <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[#60a5fa] z-30 pointer-events-none rounded-bl-sm" />
+                              <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#60a5fa] z-30 pointer-events-none rounded-br-sm" />
 
                               {scannerError ? (
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-rose-400 bg-slate-900/95 text-xs z-45">
@@ -351,7 +351,7 @@ export function Verify() {
 
                               {isCameraActive && !isPaused && !scannerError && (
                                 <motion.div
-                                  className="absolute left-0 right-0 h-0.5 bg-[#4ca385] shadow-md shadow-[#4ca385]/80 z-10 pointer-events-none"
+                                  className="absolute left-0 right-0 h-0.5 bg-[#60a5fa] shadow-md shadow-[#60a5fa]/80 z-10 pointer-events-none"
                                   animate={{ top: ["5%", "95%", "5%"] }}
                                   transition={{
                                     duration: 2,
@@ -417,7 +417,7 @@ export function Verify() {
                           </div>
                         ) : (
                           <div className="flex flex-col items-center justify-center py-6 text-center space-y-5 w-full">
-                            <div className="w-24 h-24 rounded-2xl bg-[#3D876C]/10 border border-[#3D876C]/20 flex items-center justify-center text-[#4ca385] shadow-inner relative">
+                            <div className="w-24 h-24 rounded-2xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center text-[#60a5fa] shadow-inner relative">
                               <QrCode className="w-12 h-12" />
                               <div className="absolute -bottom-1 -right-1 w-4.5 h-4.5 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center">
                                 <Camera className="w-2.5 h-2.5 text-slate-400" />
@@ -435,7 +435,7 @@ export function Verify() {
                                 setScannerError(null);
                                 setIsPaused(false);
                               }}
-                              className="bg-[#3D876C] hover:bg-[#2C6450] text-white flex items-center gap-2 px-6 py-2.5 font-bold text-xs sm:text-sm rounded-xl transition-all cursor-pointer shadow-md"
+                              className="bg-[#3b82f6] hover:bg-[#2563eb] text-white flex items-center gap-2 px-6 py-2.5 font-bold text-xs sm:text-sm rounded-xl transition-all cursor-pointer shadow-md"
                             >
                               <Camera className="w-4 h-4" /> Initialize Camera Scanner
                             </Button>
@@ -530,8 +530,8 @@ export function Verify() {
                         <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
                           Decentralized Certificate Receipt
                         </span>
-                        <span className="flex items-center gap-1.5 text-[10px] font-bold text-[#4ca385] bg-[#3D876C]/10 border border-[#3D876C]/20 px-2 py-0.5 rounded-full">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#4ca385] animate-pulse" /> Verified On-Chain
+                        <span className="flex items-center gap-1.5 text-[10px] font-bold text-[#60a5fa] bg-[#3b82f6]/10 border border-[#3b82f6]/20 px-2 py-0.5 rounded-full">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#60a5fa] animate-pulse" /> Verified On-Chain
                         </span>
                       </div>
 
@@ -562,7 +562,7 @@ export function Verify() {
                             <div>
                               <p className="text-[10px] text-slate-400">Issuing Body</p>
                               <p className="text-sm font-bold text-white flex items-center gap-1.5">
-                                <Building className="w-3.5 h-3.5 text-[#4ca385]" /> {verifyResult.certificate.issuedBy}
+                                <Building className="w-3.5 h-3.5 text-[#60a5fa]" /> {verifyResult.certificate.issuedBy}
                               </p>
                             </div>
                             <div>
@@ -605,7 +605,7 @@ export function Verify() {
                       <div className="p-4 rounded-xl bg-slate-950/40 border border-white/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div>
                           <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Credential Signature Hash</p>
-                          <p className="text-xs font-mono font-bold text-[#4ca385] mt-1 break-all select-all">
+                          <p className="text-xs font-mono font-bold text-[#60a5fa] mt-1 break-all select-all">
                             {verifyResult.certificate.certificateId}
                           </p>
                         </div>
@@ -615,13 +615,13 @@ export function Verify() {
                       <div className="pt-2">
                         <Link
                           to={`/verify/${verifyResult.certificate.certificateId}`}
-                          className="flex items-center justify-between p-4 bg-[#3D876C]/10 hover:bg-[#3D876C]/15 border border-[#3D876C]/20 rounded-xl text-[#4ca385] font-semibold text-xs sm:text-sm transition-all group cursor-pointer"
+                          className="flex items-center justify-between p-4 bg-[#3b82f6]/10 hover:bg-[#3b82f6]/15 border border-[#3b82f6]/20 rounded-xl text-[#60a5fa] font-semibold text-xs sm:text-sm transition-all group cursor-pointer"
                         >
                           <div className="flex items-center gap-2.5">
-                            <ExternalLink className="w-4 h-4 text-[#4ca385] shrink-0" />
+                            <ExternalLink className="w-4 h-4 text-[#60a5fa] shrink-0" />
                             <span className="font-bold">Audit Cryptographic Trail &amp; Ledger Receipt</span>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-[#4ca385] group-hover:translate-x-1.5 transition-transform shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-[#60a5fa] group-hover:translate-x-1.5 transition-transform shrink-0" />
                         </Link>
                       </div>
                     </div>
@@ -675,7 +675,7 @@ export function Verify() {
 
               <div className="flex items-start justify-between pb-5 border-b border-[var(--lp-border)] mb-6">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl bg-[#3D876C]/10 text-[#4ca385] flex items-center justify-center border border-[#3D876C]/30">
+                  <div className="w-11 h-11 rounded-xl bg-[#3b82f6]/10 text-[#60a5fa] flex items-center justify-center border border-[#3b82f6]/30">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div>
@@ -751,7 +751,7 @@ export function Verify() {
                 <Button
                   type="button"
                   onClick={() => setIsHowItWorksOpen(false)}
-                  className="bg-[#3D876C] hover:bg-[#2C6450] text-white px-6 font-bold cursor-pointer rounded-xl transition-all shadow-md"
+                  className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-6 font-bold cursor-pointer rounded-xl transition-all shadow-md"
                 >
                   Got it, close
                 </Button>

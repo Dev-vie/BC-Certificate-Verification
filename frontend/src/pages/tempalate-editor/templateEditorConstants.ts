@@ -94,5 +94,5 @@ export const SAMPLE_PREVIEW_DATA: Record<string, string> = {
   issueDate: "June 28, 2026",
   email: "amara@example.com",
   grade: "Distinction",
-  institutionName: "Authentix University",
+  institutionName: "VeriCert University",
 };

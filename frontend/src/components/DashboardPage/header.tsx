@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({ breadcrumb }) => {
   };
 
   const name = institution?.name || "Institution";
-  const email = institution?.email || "admin@authentix.com";
+  const email = institution?.email || "admin@vericert.com";
   const avatar = institution?.avatar;
   const initial = name.charAt(0).toUpperCase();
 

@@ -127,13 +127,13 @@ const VerifyForm: React.FC = () => {
         backText="Back to login"
       />
 
-      <div className="w-full lg:w-[42%] flex flex-col justify-center p-6 sm:p-10 md:p-14 relative bg-slate-900/80 backdrop-blur-2xl text-white overflow-hidden my-4 sm:m-4 rounded-3xl shadow-2xl shadow-emerald-950/40 select-none border border-white/15">
+      <div className="w-full lg:w-[42%] flex flex-col justify-center p-6 sm:p-10 md:p-14 relative bg-slate-900/80 backdrop-blur-2xl text-white overflow-hidden my-4 sm:m-4 rounded-3xl shadow-2xl shadow-blue-950/40 select-none border border-white/15">
 
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-emerald-500/10 blur-[100px] pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-blue-500/10 blur-[100px] pointer-events-none" />
 
         <div className="max-w-md w-full mx-auto relative z-10">
           <div className="mb-7">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/30 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/30 shadow-sm">
               <Mail className="w-6 h-6" />
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -142,7 +142,7 @@ const VerifyForm: React.FC = () => {
             <p className="text-slate-300 text-sm mt-2 font-medium">
               We have sent a 6-digit verification code to{" "}
               {email ? (
-                <span className="font-bold text-emerald-400 underline underline-offset-2">{email}</span>
+                <span className="font-bold text-blue-400 underline underline-offset-2">{email}</span>
               ) : (
                 "your email address"
               )}
@@ -174,7 +174,7 @@ const VerifyForm: React.FC = () => {
                     onChange={(e) => handleOtpChange(index, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(index, e)}
                     onPaste={handlePaste}
-                    className="w-12 h-14 text-center text-xl font-bold rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 transition-all text-white shadow-sm"
+                    className="w-12 h-14 text-center text-xl font-bold rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition-all text-white shadow-sm"
                   />
                 ))}
               </div>
@@ -182,7 +182,7 @@ const VerifyForm: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50 active:scale-[0.99] transition-all cursor-pointer"
+                className="w-full bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-950/50 active:scale-[0.99] transition-all cursor-pointer"
               >
                 {isLoading ? (
                   <>
@@ -201,7 +201,7 @@ const VerifyForm: React.FC = () => {
                 type="button"
                 onClick={handleResendCode}
                 disabled={isResending}
-                className="font-bold text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition inline-flex items-center gap-1 cursor-pointer disabled:opacity-50"
+                className="font-bold text-blue-400 hover:text-blue-300 underline underline-offset-2 transition inline-flex items-center gap-1 cursor-pointer disabled:opacity-50"
               >
                 {isResending ? (
                   <>

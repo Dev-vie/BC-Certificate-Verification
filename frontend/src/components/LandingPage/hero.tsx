@@ -61,7 +61,8 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-44 pb-24 overflow-hidden text-[var(--lp-foreground)] bg-transparent">
+    <section className="relative min-h-screen flex items-center pt-44 pb-24 overflow-hidden text-white bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12 w-full">
         {/* Two-column grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -73,19 +74,19 @@ export function Hero() {
             className="flex flex-col items-start text-left"
           >
             {/* Powered by Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--lp-accent)]/20 bg-[var(--lp-secondary)] mb-10">
-              <span className="w-2 h-2 rounded-full bg-[var(--lp-accent)] animate-pulse" />
-              <span className="text-xs font-semibold text-[var(--lp-primary)] tracking-wide uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-900/30 backdrop-blur-md mb-10 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+              <span className="text-xs font-semibold text-blue-300 tracking-wide uppercase">
                 Powered by Polygon Blockchain
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] lg:leading-[1.15] font-bold tracking-tight text-[var(--lp-foreground)] mb-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] lg:leading-[1.15] font-bold tracking-tight text-white mb-8">
               Secure Blockchain <br />
-              <span className="text-[var(--lp-accent)]">Certificate Verification</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Certificate Verification</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[var(--lp-muted)] max-w-lg mb-12 leading-relaxed">
+            <p className="text-base sm:text-lg text-blue-100/80 max-w-lg mb-12 leading-relaxed">
               Issue, store, and verify digital certificates with tamper-proof blockchain technology. Built for educational institutions that demand absolute trust.
             </p>
 
@@ -94,7 +95,7 @@ export function Hero() {
                 variant="default"
                 size="lg"
                 onClick={handleIssueCertificateClick}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[var(--lp-primary)] hover:bg-[var(--lp-primary)]/90 text-white font-semibold px-8 py-4 rounded-xl transition-all shadow-lg shadow-[var(--lp-primary)]/20 cursor-pointer"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition-all shadow-lg shadow-blue-500/30 cursor-pointer"
               >
                 <Award className="w-5 h-5" /> Issue a Certificate
               </Button>
@@ -102,7 +103,7 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 onClick={handleVerifyClick}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border border-[var(--lp-border)] hover:bg-[var(--lp-primary)]/8 hover:border-[var(--lp-primary)]/40 hover:text-[var(--lp-primary)] text-[var(--lp-foreground)] font-semibold px-8 py-4 rounded-xl transition-all cursor-pointer group"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-slate-900/50 border border-blue-500/50 hover:bg-blue-900/40 hover:border-blue-400 text-blue-100 font-semibold px-8 py-4 rounded-xl transition-all cursor-pointer group shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]"
               >
                 Verify Certificate <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
@@ -169,7 +170,7 @@ export function Hero() {
                   >
                     <img
                       src={heroImage}
-                      alt="Authentix Secure Credentials Portal - Front"
+                      alt="VeriCert Secure Credentials Portal - Front"
                       className="w-full h-auto object-contain select-none pointer-events-none shadow-orbit-hover"
                     />
                   </div>
@@ -185,7 +186,7 @@ export function Hero() {
                   >
                     <img
                       src={certificateBackImage}
-                      alt="Authentix Secure Credentials Portal - Back"
+                      alt="VeriCert Secure Credentials Portal - Back"
                       className="w-full h-auto object-contain select-none pointer-events-none shadow-orbit-hover"
                     />
                   </div>

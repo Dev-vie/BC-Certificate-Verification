@@ -61,24 +61,24 @@ const ResetPassForm: React.FC = () => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-between bg-transparent text-white p-6 relative overflow-hidden select-none">
 
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-teal-400/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-cyan-400/10 blur-[120px] pointer-events-none" />
 
       <div className="flex items-center gap-2.5 z-10 pt-4">
-        <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center shadow-md shadow-emerald-600/20">
+        <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-md shadow-blue-600/20">
           <Lock className="w-4.5 h-4.5 text-white" />
         </div>
         <span className="font-bold text-lg text-white tracking-tight">
-          Authentix
+          VeriCert
         </span>
       </div>
 
       <div className="my-auto max-w-md w-full mx-auto z-10">
 
-        <div className="bg-slate-900/80 border border-white/15 backdrop-blur-2xl rounded-3xl p-6 sm:p-10 shadow-2xl shadow-emerald-950/40 relative overflow-hidden flex flex-col items-center text-white">
+        <div className="bg-slate-900/80 border border-white/15 backdrop-blur-2xl rounded-3xl p-6 sm:p-10 shadow-2xl shadow-blue-950/40 relative overflow-hidden flex flex-col items-center text-white">
 
           {success ? (
-            <div className="absolute inset-0 bg-emerald-600/95 backdrop-blur-md text-white flex flex-col items-center justify-center p-6 text-center animate-fade-in z-20">
+            <div className="absolute inset-0 bg-blue-600/95 backdrop-blur-md text-white flex flex-col items-center justify-center p-6 text-center animate-fade-in z-20">
               <motion.div
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -87,14 +87,14 @@ const ResetPassForm: React.FC = () => {
                 <BadgeCheck className="w-10 h-10 text-white stroke-[2.5]" />
               </motion.div>
               <h3 className="text-xl font-bold">Password Reset Success</h3>
-              <p className="text-emerald-100 text-sm mt-2 max-w-xs leading-relaxed">
+              <p className="text-blue-100 text-sm mt-2 max-w-xs leading-relaxed">
                 Your credentials have been successfully updated. Redirecting you to login...
               </p>
             </div>
           ) : null}
 
-          <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-5 shadow-sm shrink-0">
-            <Key className="w-7 h-7 text-emerald-400 stroke-[2]" />
+          <div className="w-16 h-16 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center mb-5 shadow-sm shrink-0">
+            <Key className="w-7 h-7 text-blue-400 stroke-[2]" />
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-center">
@@ -124,7 +124,7 @@ const ResetPassForm: React.FC = () => {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="Enter new password"
-                  className="w-full pl-11 pr-12 py-3 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 transition-all text-white placeholder:text-slate-400 text-sm"
+                  className="w-full pl-11 pr-12 py-3 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition-all text-white placeholder:text-slate-400 text-sm"
                 />
                 <button
                   type="button"
@@ -147,7 +147,7 @@ const ResetPassForm: React.FC = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm new password"
-                  className="w-full pl-11 pr-12 py-3 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 transition-all text-white placeholder:text-slate-400 text-sm"
+                  className="w-full pl-11 pr-12 py-3 rounded-xl border border-white/15 bg-slate-950/60 hover:border-white/25 focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition-all text-white placeholder:text-slate-400 text-sm"
                 />
                 <button
                   type="button"
@@ -162,7 +162,7 @@ const ResetPassForm: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50 active:scale-[0.99] transition-all cursor-pointer select-none"
+              className="w-full mt-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-950/50 active:scale-[0.99] transition-all cursor-pointer select-none"
             >
               {isLoading ? (
                 <>
@@ -178,7 +178,7 @@ const ResetPassForm: React.FC = () => {
           <div className="mt-6 pt-4 border-t border-white/10 text-center w-full">
             <Link
               to="/auth/login"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-emerald-400 transition duration-200"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-200"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Return to the login screen</span>
@@ -190,10 +190,10 @@ const ResetPassForm: React.FC = () => {
 
       <div className="w-full max-w-md mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs border-t border-white/10 pt-6 pb-4">
         <div className="flex items-center gap-1.5 font-medium">
-          <Lock className="w-3.5 h-3.5 text-emerald-400" />
+          <Lock className="w-3.5 h-3.5 text-blue-400" />
           <span>AES-256 Bit Encryption</span>
         </div>
-        <span className="font-mono">Authentix Security</span>
+        <span className="font-mono">VeriCert Security</span>
       </div>
 
     </div>

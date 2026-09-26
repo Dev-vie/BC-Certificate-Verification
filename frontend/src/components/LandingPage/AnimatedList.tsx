@@ -168,7 +168,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
                 <div className="flex items-center justify-between w-full gap-4 text-left">
                   <p className="item-text">{questionText}</p>
                   {answerText && (
-                    <span className="p-1 rounded-lg bg-slate-50 border border-slate-100 text-[#3D876C] shrink-0 transition-all duration-200">
+                    <span className="p-1 rounded-lg bg-slate-50 border border-slate-100 text-[#3b82f6] shrink-0 transition-all duration-200">
                       {isExpanded ? <Minus className="w-4 h-4 animate-scale-in" /> : <Plus className="w-4 h-4 animate-scale-in" />}
                     </span>
                   )}

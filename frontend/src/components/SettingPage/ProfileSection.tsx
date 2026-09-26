@@ -104,7 +104,7 @@ export const ProfileSection = ({
           Profile
         </h1>
         <p className="text-xs text-muted-foreground mt-1">
-          Manage your personal identity details across Authentix.
+          Manage your personal identity details across VeriCert.
         </p>
       </div>
 

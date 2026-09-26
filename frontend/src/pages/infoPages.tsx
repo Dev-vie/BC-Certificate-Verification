@@ -29,7 +29,7 @@ export function PrivacyPage() {
 
           <div className="space-y-6 text-slate-300 text-sm md:text-base leading-relaxed">
             <p className="leading-relaxed">
-              At Authentix, we take your privacy and data security seriously. This Privacy Policy describes how we collect, use, and protect information when you use our blockchain-based certificate verification services.
+              At VeriCert, we take your privacy and data security seriously. This Privacy Policy describes how we collect, use, and protect information when you use our blockchain-based certificate verification services.
             </p>
 
             <h2 className="text-lg font-bold text-white pt-4 border-t border-white/10">1. Information We Collect</h2>
@@ -46,7 +46,7 @@ export function PrivacyPage() {
 
             <h2 className="text-lg font-bold text-white pt-4 border-t border-white/10">3. Blockchain Ledger Immutability</h2>
             <p className="leading-relaxed">
-              Certificates issued through Authentix are anchored on public or consortium blockchain ledgers. These cryptographic ledger records (containing verification hashes, dates, and issuer signatures) are permanent, public, and cannot be deleted or modified. This design guarantees credentials cannot be falsified.
+              Certificates issued through VeriCert are anchored on public or consortium blockchain ledgers. These cryptographic ledger records (containing verification hashes, dates, and issuer signatures) are permanent, public, and cannot be deleted or modified. This design guarantees credentials cannot be falsified.
             </p>
 
             <h2 className="text-lg font-bold text-white pt-4 border-t border-white/10">4. Contact Information</h2>
@@ -86,12 +86,12 @@ export function TermsPage() {
 
           <div className="space-y-6 text-slate-300 text-sm md:text-base leading-relaxed">
             <p className="leading-relaxed">
-              Welcome to Authentix. By accessing or using our blockchain certificate verification platform, you agree to comply with and be bound by the following Terms of Service.
+              Welcome to VeriCert. By accessing or using our blockchain certificate verification platform, you agree to comply with and be bound by the following Terms of Service.
             </p>
 
             <h2 className="text-lg font-bold text-white pt-4 border-t border-white/10">1. Acceptable Use Policy</h2>
             <p className="leading-relaxed">
-              You agree to use Authentix only for authenticating and verifying legitimate educational credentials. Issuing false, misleading, or unauthorized credentials will result in immediate termination of institutional access and may be reported to relevant legal authorities.
+              You agree to use VeriCert only for authenticating and verifying legitimate educational credentials. Issuing false, misleading, or unauthorized credentials will result in immediate termination of institutional access and may be reported to relevant legal authorities.
             </p>
 
             <h2 className="text-lg font-bold text-white pt-4 border-t border-white/10">2. Institutional Responsibility</h2>
@@ -160,7 +160,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Email Support</p>
-                    <p className="text-sm font-semibold mt-0.5 text-white">support@authentix.edu</p>
+                    <p className="text-sm font-semibold mt-0.5 text-white">support@vericert.edu</p>
                   </div>
                 </div>
 
@@ -187,7 +187,7 @@ export function ContactPage() {
             </div>
 
             <div className="border-t border-white/10 pt-6 mt-12 z-10">
-              <p className="text-xs text-slate-400">Authentix Verification Systems</p>
+              <p className="text-xs text-slate-400">VeriCert Verification Systems</p>
             </div>
           </div>
 

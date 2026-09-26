@@ -169,7 +169,7 @@ export const DashboardPage = () => {
   }, []);
 
   const [certificates, setCertificates] = useState<any[]>(() => {
-    const saved = localStorage.getItem("authentix_certificates");
+    const saved = localStorage.getItem("vericert_certificates");
     if (saved !== null) {
       try {
         return JSON.parse(saved);
@@ -182,7 +182,7 @@ export const DashboardPage = () => {
 
   useEffect(() => {
     const syncCerts = () => {
-      const saved = localStorage.getItem("authentix_certificates");
+      const saved = localStorage.getItem("vericert_certificates");
       if (saved !== null) {
         try {
           setCertificates(JSON.parse(saved));
@@ -414,10 +414,11 @@ export const DashboardPage = () => {
               return (
                 <div
                   key={s.label}
-                  className={`dashboard-stat-card bg-card rounded-xl border border-border p-6 shadow-sm flex flex-col justify-between transition-all duration-300 ${
+                  className={`dashboard-stat-card relative bg-card/60 backdrop-blur-xl rounded-xl border border-white/10 dark:border-white/5 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-col justify-between transition-all duration-300 overflow-hidden ${
                     statsLoading ? "opacity-60 animate-pulse" : ""
                   }`}
                 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
                   <div className="flex items-start justify-between mb-5">
                     <div>
                       <p className={`text-3xl font-extrabold ${s.valColor} tracking-tight leading-none mb-2`}>
@@ -447,8 +448,9 @@ export const DashboardPage = () => {
           {/* Charts Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
             {/* Issuance Trend */}
-            <div className="bg-card rounded-2xl border border-border p-5 lg:col-span-2">
-              <div className="flex items-start justify-between mb-4">
+            <div className="relative bg-card/60 backdrop-blur-xl rounded-2xl border border-white/10 dark:border-white/5 p-5 lg:col-span-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="relative flex items-start justify-between mb-4">
                 <div>
                   <h2 className="text-base font-semibold text-foreground">
                     Issuance Trend
@@ -463,8 +465,9 @@ export const DashboardPage = () => {
             </div>
 
             {/* By Program — Pie Chart */}
-            <div className="bg-card rounded-2xl border border-border p-5 flex flex-col lg:col-span-1">
-              <div className="mb-2">
+            <div className="relative bg-card/60 backdrop-blur-xl rounded-2xl border border-white/10 dark:border-white/5 p-5 flex flex-col lg:col-span-1 shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="relative mb-2">
                 <h2 className="text-base font-semibold text-foreground">
                   By Program
                 </h2>
@@ -482,9 +485,9 @@ export const DashboardPage = () => {
             </div>
           </div>
 
-          <div className="bg-card rounded-2xl border border-border overflow-hidden">
-
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+          <div className="relative bg-card/60 backdrop-blur-xl rounded-2xl border border-white/10 dark:border-white/5 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+            <div className="absolute inset-0 bg-blue-500/5 opacity-50 pointer-events-none mix-blend-overlay"></div>
+            <div className="relative flex items-center justify-between px-6 py-4 border-b border-border/50">
               <div>
                 <h2 className="text-base font-semibold text-foreground">
                   Recent Certificates

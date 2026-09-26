@@ -127,14 +127,14 @@ const RegisterForm: React.FC = () => {
 
       <AuthLeftPanel
         title="Create Institution Workspace"
-        subtitle="Join Authentix to establish your decentralized identity, issue tamper-proof certificates, and automate credential verification."
+        subtitle="Join VeriCert to establish your decentralized identity, issue tamper-proof certificates, and automate credential verification."
         backLink="/"
         backText="Back to website"
       />
 
-      <div className="w-full lg:w-[42%] flex flex-col justify-center p-6 sm:p-10 md:p-14 relative bg-slate-900/80 backdrop-blur-2xl text-white overflow-hidden my-4 sm:m-4 rounded-3xl shadow-2xl shadow-emerald-950/40 select-none border border-white/15">
+      <div className="w-full lg:w-[42%] flex flex-col justify-center p-6 sm:p-10 md:p-14 relative bg-slate-900/80 backdrop-blur-2xl text-white overflow-hidden my-4 sm:m-4 rounded-3xl shadow-2xl shadow-blue-950/40 select-none border border-white/15">
 
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-emerald-500/10 blur-[100px] pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-blue-500/10 blur-[100px] pointer-events-none" />
 
         <div className="max-w-md w-full mx-auto relative z-10">
 
@@ -146,7 +146,7 @@ const RegisterForm: React.FC = () => {
               Already have an account?{" "}
               <Link
                 to="/auth/login"
-                className="font-bold text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition-colors"
+                className="font-bold text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors"
               >
                 Log in
               </Link>
@@ -168,7 +168,7 @@ const RegisterForm: React.FC = () => {
                 value={institutionName}
                 onChange={(e) => setInstitutionName(e.target.value)}
                 placeholder="Institution Name"
-                className="w-full px-4 py-3.5 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 hover:border-white/25 transition-all font-medium shadow-sm"
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 hover:border-white/25 transition-all font-medium shadow-sm"
               />
             </div>
 
@@ -178,7 +178,7 @@ const RegisterForm: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
-                className="w-full px-4 py-3.5 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 hover:border-white/25 transition-all font-medium shadow-sm"
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 hover:border-white/25 transition-all font-medium shadow-sm"
               />
             </div>
 
@@ -189,7 +189,7 @@ const RegisterForm: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
-                  className="w-full px-4 py-3.5 pr-12 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 hover:border-white/25 transition-all font-medium shadow-sm"
+                  className="w-full px-4 py-3.5 pr-12 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 hover:border-white/25 transition-all font-medium shadow-sm"
                 />
                 <button
                   type="button"
@@ -208,7 +208,7 @@ const RegisterForm: React.FC = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm password"
-                  className="w-full px-4 py-3.5 pr-12 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-500 hover:border-white/25 transition-all font-medium shadow-sm"
+                  className="w-full px-4 py-3.5 pr-12 rounded-xl bg-slate-950/60 border border-white/15 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 hover:border-white/25 transition-all font-medium shadow-sm"
                 />
                 <button
                   type="button"
@@ -226,14 +226,14 @@ const RegisterForm: React.FC = () => {
                 id="terms"
                 checked={agreeTerms}
                 onChange={(e) => setAgreeTerms(e.target.checked)}
-                className="w-4 h-4 rounded accent-emerald-500 cursor-pointer shrink-0"
+                className="w-4 h-4 rounded accent-blue-500 cursor-pointer shrink-0"
               />
               <label htmlFor="terms" className="text-xs text-slate-300 cursor-pointer select-none font-medium">
                 I agree to the{" "}
                 <button
                   type="button"
                   onClick={() => setShowTermsModal(true)}
-                  className="font-bold text-emerald-400 underline underline-offset-2 hover:text-emerald-300 transition-colors cursor-pointer bg-transparent border-0 p-0 inline-block align-baseline"
+                  className="font-bold text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors cursor-pointer bg-transparent border-0 p-0 inline-block align-baseline"
                 >
                   Terms & Conditions
                 </button>
@@ -243,7 +243,7 @@ const RegisterForm: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50 active:scale-[0.99] transition-all cursor-pointer"
+              className="w-full mt-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-950/50 active:scale-[0.99] transition-all cursor-pointer"
             >
               {isLoading ? (
                 <>
@@ -279,11 +279,11 @@ const RegisterForm: React.FC = () => {
             <div className="p-6 overflow-y-auto space-y-4 text-slate-300 text-xs leading-relaxed max-h-[50vh]">
               <p className="font-semibold text-white">Last updated: August 28, 2026</p>
               
-              <p>Welcome to Authentix. By creating an account or using our blockchain certificate verification system, you agree to comply with and be bound by the following terms of service:</p>
+              <p>Welcome to VeriCert. By creating an account or using our blockchain certificate verification system, you agree to comply with and be bound by the following terms of service:</p>
 
               <div>
                 <h4 className="font-bold text-white mb-1">1. Issuer Responsibility</h4>
-                <p>Institutions are solely responsible for the accuracy, validity, and legitimacy of all academic credentials, certificates, and student records uploaded, generated, or issued through the Authentix platform.</p>
+                <p>Institutions are solely responsible for the accuracy, validity, and legitimacy of all academic credentials, certificates, and student records uploaded, generated, or issued through the VeriCert platform.</p>
               </div>
 
               <div>
@@ -293,7 +293,7 @@ const RegisterForm: React.FC = () => {
 
               <div>
                 <h4 className="font-bold text-white mb-1">3. Workspace &amp; Key Security</h4>
-                <p>You are entirely responsible for maintaining the confidentiality of your account credentials, passwords, API keys, and multi-factor authentication (2FA) tokens. Authentix is not liable for any losses arising from security breaches on your end.</p>
+                <p>You are entirely responsible for maintaining the confidentiality of your account credentials, passwords, API keys, and multi-factor authentication (2FA) tokens. VeriCert is not liable for any losses arising from security breaches on your end.</p>
               </div>
 
               <div>
@@ -303,7 +303,7 @@ const RegisterForm: React.FC = () => {
 
               <div>
                 <h4 className="font-bold text-white mb-1 font-sans">5. Limitation of Liability</h4>
-                <p>Authentix provides decentralized credential infrastructure "as is" and holds no liability for network outages, blockchain transaction delays, gas fee fluctuations, or validating decisions made by third parties.</p>
+                <p>VeriCert provides decentralized credential infrastructure "as is" and holds no liability for network outages, blockchain transaction delays, gas fee fluctuations, or validating decisions made by third parties.</p>
               </div>
             </div>
 
@@ -312,7 +312,7 @@ const RegisterForm: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowTermsModal(false)}
-                className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-md"
+                className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-md"
               >
                 I Understand
               </button>

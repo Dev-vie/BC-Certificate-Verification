@@ -13,11 +13,11 @@ const faqData = [
   },
   {
     question: "Which blockchain networks do you support?",
-    answer: "Authentix currently anchors cryptographic hashes to the Polygon blockchain network for maximum decentralization and security. We also support compatible EVM networks and private permissioned networks (like Hyperledger Fabric) for enterprise and institutional clients with high-frequency issuing needs."
+    answer: "VeriCert currently anchors cryptographic hashes to the Polygon blockchain network for maximum decentralization and security. We also support compatible EVM networks and private permissioned networks (like Hyperledger Fabric) for enterprise and institutional clients with high-frequency issuing needs."
   },
   {
     question: "Can I fully customize the certificate design?",
-    answer: "Yes, absolutely! The Authentix platform includes a visual drag-and-drop template designer. You can upload custom background images, incorporate university logos and signature seals, choose typography styles, and insert dynamic fields (like Student Name, Course, Issue Date) that automatically populate upon issuance."
+    answer: "Yes, absolutely! The VeriCert platform includes a visual drag-and-drop template designer. You can upload custom background images, incorporate university logos and signature seals, choose typography styles, and insert dynamic fields (like Student Name, Course, Issue Date) that automatically populate upon issuance."
   },
   {
     question: "Is there a limit on certificates I can issue?",
@@ -46,7 +46,7 @@ export function Faq() {
             Frequently asked questions
           </h2>
           <p className="text-base sm:text-lg text-slate-400">
-            Quick answers to how Authentix secures your institutional credentials.
+            Quick answers to how VeriCert secures your institutional credentials.
           </p>
         </motion.div>
 

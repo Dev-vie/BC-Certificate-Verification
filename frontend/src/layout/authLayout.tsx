@@ -4,7 +4,7 @@ import { Particles } from "../components/ui/Particles";
 
 export const AuthLayout: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full font-sans text-slate-100 selection:bg-emerald-500 selection:text-white overflow-x-hidden bg-[#090d16]">
+    <div className="relative min-h-screen w-full font-sans text-slate-100 selection:bg-blue-500 selection:text-white overflow-x-hidden bg-[#090d16]">
 
       <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <Particles

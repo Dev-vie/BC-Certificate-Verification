@@ -49,7 +49,7 @@ const footerLinks = [
     title: "Company",
     links: [
       { label: "About Us", href: "/home#features" },
-      { label: "Contact Us", href: "mailto:support@authentix.com" },
+      { label: "Contact Us", href: "mailto:support@vericert.com" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
     ],
@@ -111,11 +111,11 @@ export function Footer() {
             >
               <img
                 src="/logo.png"
-                alt="Authentix Logo"
+                alt="VeriCert Logo"
                 className="w-12 h-12 object-contain"
               />
               <span className="font-bold text-[var(--lp-foreground)] text-2xl tracking-tight">
-                Authenti<span className="text-[#3D876C]">x</span>
+                Veri<span className="text-blue-500">Cert</span>
               </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
@@ -173,7 +173,7 @@ export function Footer() {
           </div>
 
           <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} Authentix. All rights reserved.
+            © {new Date().getFullYear()} VeriCert. All rights reserved.
           </p>
         </div>
       </div>
