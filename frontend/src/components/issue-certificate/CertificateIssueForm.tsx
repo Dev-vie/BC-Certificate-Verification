@@ -53,7 +53,7 @@ const downloadCsvTemplate = () => {
 };
 
 const fieldClassName =
-  "w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-[#3D876C]/50 focus:ring-2 focus:ring-[#3D876C]/15";
+  "w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/50 focus:ring-2 focus:ring-primary/15";
 
 export const CertificateIssueForm = ({
   template,
@@ -108,9 +108,9 @@ export const CertificateIssueForm = ({
               </div>
             </label>
 
-            <div className="col-span-2 rounded-2xl border border-[#3D876C]/30 bg-[#3D876C]/5 p-4 transition-colors">
+            <div className="col-span-2 rounded-2xl border border-primary/30 bg-primary/5 p-4 transition-colors">
               <div className="flex items-center gap-2 mb-1.5">
-                <div className="p-1.5 rounded-lg bg-[#3D876C]/10 text-[#3D876C]">
+                <div className="p-1.5 rounded-lg bg-primary/10 text-primary">
                   <Mail size={16} />
                 </div>
                 <div>
@@ -245,7 +245,7 @@ export const CertificateIssueForm = ({
           <div className="rounded-2xl border border-dashed border-border bg-background p-5 transition-colors duration-200">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div className="flex items-start gap-3">
-                <div className="rounded-2xl bg-card p-3 shadow-sm text-[#3D876C] border border-border">
+                <div className="rounded-2xl bg-card p-3 shadow-sm text-primary border border-border">
                   <FileText size={18} />
                 </div>
                 <div>
@@ -266,9 +266,9 @@ export const CertificateIssueForm = ({
               </button>
             </div>
 
-            <div className="mb-4 rounded-2xl border border-[#3D876C]/30 bg-[#3D876C]/5 p-4 transition-colors">
+            <div className="mb-4 rounded-2xl border border-primary/30 bg-primary/5 p-4 transition-colors">
               <div className="flex items-center gap-2 mb-1.5">
-                <div className="p-1.5 rounded-lg bg-[#3D876C]/10 text-[#3D876C]">
+                <div className="p-1.5 rounded-lg bg-primary/10 text-primary">
                   <Mail size={16} />
                 </div>
                 <div>
@@ -302,7 +302,7 @@ export const CertificateIssueForm = ({
                 className={`mt-4 rounded-xl border p-4 ${
                   bulkResult.failed > 0
                     ? "border-amber-500/30 bg-amber-500/10"
-                    : "border-emerald-500/30 bg-emerald-500/10"
+                    : "border-primary/30 bg-primary/10"
                 }`}
               >
                 <p className="text-sm font-semibold text-foreground">
@@ -339,7 +339,7 @@ export const CertificateIssueForm = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#3D876C] px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-[#2C6450] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary-hover cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>
@@ -365,7 +365,7 @@ export const CertificateIssueForm = ({
             className={`mt-3 text-center text-sm font-medium ${
               issueStatusVariant === "error"
                 ? "text-rose-500"
-                : "text-emerald-500"
+                : "text-primary"
             }`}
           >
             {issueStatus}

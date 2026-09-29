@@ -139,7 +139,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
             <span
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${
                 isWellConfigured
-                  ? "bg-emerald-500/10 text-[#3D876C] border border-emerald-500/20"
+                  ? "bg-primary/10 text-primary border border-primary/20"
                   : "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20"
               }`}
             >
@@ -157,7 +157,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
             </span>
 
             {hasQrCode && (
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#3D876C]/10 text-[#3D876C]">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-primary/10 text-primary">
                 QR Code Placed
               </span>
             )}
@@ -170,7 +170,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
               onClick={() => setShowOutlines((prev) => !prev)}
               className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
                 showOutlines
-                  ? "bg-[#3D876C]/10 border-[#3D876C] text-[#3D876C]"
+                  ? "bg-primary/10 border-primary text-primary"
                   : "bg-card border-border text-muted-foreground hover:text-foreground"
               }`}
               title="Toggle bounding box outlines around every field"
@@ -184,7 +184,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
               onClick={() => setShowGuides((prev) => !prev)}
               className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
                 showGuides
-                  ? "bg-[#3D876C]/10 border-[#3D876C] text-[#3D876C]"
+                  ? "bg-primary/10 border-primary text-primary"
                   : "bg-card border-border text-muted-foreground hover:text-foreground"
               }`}
               title="Toggle center crosshairs"
@@ -198,7 +198,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
               onClick={() => setShowGrid((prev) => !prev)}
               className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
                 showGrid
-                  ? "bg-[#3D876C]/10 border-[#3D876C] text-[#3D876C]"
+                  ? "bg-primary/10 border-primary text-primary"
                   : "bg-card border-border text-muted-foreground hover:text-foreground"
               }`}
               title="Toggle alignment grid"
@@ -367,10 +367,10 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                     }}
                     className={`flex items-center transition-all cursor-pointer ${
                       isSelected
-                        ? "ring-2 ring-[#3D876C] bg-[#3D876C]/10"
+                        ? "ring-2 ring-primary bg-primary/10"
                         : showOutlines
-                        ? "ring-1 ring-dashed ring-[#3D876C] bg-[#3D876C]/5 hover:bg-[#3D876C]/15"
-                        : "hover:ring-1 hover:ring-[#3D876C]/40 hover:bg-[#3D876C]/5"
+                        ? "ring-1 ring-dashed ring-primary bg-primary/5 hover:bg-primary/15"
+                        : "hover:ring-1 hover:ring-primary/40 hover:bg-primary/5"
                     }`}
                     title={`Click to inspect ${field.name} (${field.width}x${field.height}px)`}
                   >
@@ -396,7 +396,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                     )}
 
                     {showOutlines && (
-                      <span className="absolute -top-4 left-0 text-[9px] font-mono bg-[#3D876C] text-white px-1 rounded-xs uppercase tracking-wider pointer-events-none">
+                      <span className="absolute -top-4 left-0 text-[9px] font-mono bg-primary text-white px-1 rounded-xs uppercase tracking-wider pointer-events-none">
                         {field.name}
                       </span>
                     )}
@@ -416,7 +416,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
               Zoom: <strong className="text-foreground">{Math.round(zoom * 100)}%</strong>
             </span>
             {selectedInspectField && (
-              <span className="flex items-center gap-1.5 text-[#3D876C] font-medium bg-[#3D876C]/10 px-2 py-0.5 rounded-md">
+              <span className="flex items-center gap-1.5 text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-md">
                 <Info size={13} />
                 Selected: {selectedInspectField.name} ({selectedInspectField.width}×{selectedInspectField.height}px at x:{selectedInspectField.x}, y:{selectedInspectField.y} · {selectedInspectField.fontSize}px {selectedInspectField.fontFamily})
               </span>
@@ -426,7 +426,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
           <button
             type="button"
             onClick={onSwitchToCanvas}
-            className="font-bold text-[#3D876C] hover:underline cursor-pointer flex items-center gap-1"
+            className="font-bold text-primary hover:underline cursor-pointer flex items-center gap-1"
           >
             Adjust Positions on Canvas →
           </button>
@@ -437,7 +437,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
 
         <div className="p-5 border-b border-border">
           <div className="flex items-center gap-2 mb-1">
-            <Sparkles size={16} className="text-[#3D876C]" />
+            <Sparkles size={16} className="text-primary" />
             <h3 className="font-bold text-foreground text-sm">
               Live Detail Inspector
             </h3>
@@ -448,9 +448,9 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
         </div>
 
         {selectedInspectField && (
-          <div className="p-5 border-b border-border bg-emerald-500/5">
+          <div className="p-5 border-b border-border bg-primary/5">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-bold text-[#3D876C] uppercase tracking-wider flex items-center gap-1">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-1">
                 <Layers size={13} /> Field Detail
               </span>
               <button
@@ -496,7 +496,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
               onClick={() => handleApplyPreset("standard")}
               className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
                 activePreset === "standard"
-                  ? "bg-[#3D876C] text-white border-[#3D876C]"
+                  ? "bg-primary text-white border-primary"
                   : "bg-background border-border text-foreground hover:bg-card"
               }`}
             >
@@ -507,7 +507,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
               onClick={() => handleApplyPreset("longName")}
               className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
                 activePreset === "longName"
-                  ? "bg-[#3D876C] text-white border-[#3D876C]"
+                  ? "bg-primary text-white border-primary"
                   : "bg-background border-border text-foreground hover:bg-card"
               }`}
             >
@@ -518,7 +518,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
               onClick={() => handleApplyPreset("minimal")}
               className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
                 activePreset === "minimal"
-                  ? "bg-[#3D876C] text-white border-[#3D876C]"
+                  ? "bg-primary text-white border-primary"
                   : "bg-background border-border text-foreground hover:bg-card"
               }`}
             >
@@ -535,7 +535,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
             <button
               type="button"
               onClick={() => handleApplyPreset("standard")}
-              className="text-xs font-semibold text-muted-foreground hover:text-[#3D876C] flex items-center gap-1 cursor-pointer"
+              className="text-xs font-semibold text-muted-foreground hover:text-primary flex items-center gap-1 cursor-pointer"
             >
               <RefreshCw size={11} /> Reset
             </button>
@@ -553,7 +553,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                   handleFieldChange("recipientName", e.target.value)
                 }
                 placeholder="e.g. Amara Okafor"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-[#3D876C]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -568,7 +568,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                   handleFieldChange("courseProgram", e.target.value)
                 }
                 placeholder="e.g. Advanced Web Development"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-[#3D876C]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -582,7 +582,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                   value={testData.grade || ""}
                   onChange={(e) => handleFieldChange("grade", e.target.value)}
                   placeholder="e.g. Distinction"
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-[#3D876C]"
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
                 />
               </div>
 
@@ -597,7 +597,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                     handleFieldChange("issueDate", e.target.value)
                   }
                   placeholder="e.g. June 28, 2026"
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-[#3D876C]"
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
                 />
               </div>
             </div>
@@ -613,7 +613,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                   handleFieldChange("certificateId", e.target.value)
                 }
                 placeholder="e.g. CERT-2026-4821"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground font-mono focus:outline-none focus:ring-1 focus:ring-[#3D876C]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground font-mono focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -628,7 +628,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                   handleFieldChange("institutionName", e.target.value)
                 }
                 placeholder="e.g. VeriCert Academy"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-[#3D876C]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -642,7 +642,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
             <li className="flex items-center gap-2">
               <span
                 className={`w-2 h-2 rounded-full ${
-                  hasRecipientName ? "bg-emerald-500" : "bg-rose-500"
+                  hasRecipientName ? "bg-primary" : "bg-rose-500"
                 }`}
               />
               <span>Recipient Name placed ({hasRecipientName ? "Pass" : "Missing"})</span>
@@ -650,7 +650,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
             <li className="flex items-center gap-2">
               <span
                 className={`w-2 h-2 rounded-full ${
-                  hasCourse ? "bg-emerald-500" : "bg-rose-500"
+                  hasCourse ? "bg-primary" : "bg-rose-500"
                 }`}
               />
               <span>Course Title placed ({hasCourse ? "Pass" : "Missing"})</span>
@@ -658,7 +658,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
             <li className="flex items-center gap-2">
               <span
                 className={`w-2 h-2 rounded-full ${
-                  canvasFields.length >= 4 ? "bg-emerald-500" : "bg-amber-500"
+                  canvasFields.length >= 4 ? "bg-primary" : "bg-amber-500"
                 }`}
               />
               <span>Field completeness ({canvasFields.length}/5 configured)</span>

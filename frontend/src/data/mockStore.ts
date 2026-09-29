@@ -171,6 +171,24 @@ export function saveStoredTemplates(templates: any[]) {
   localStorage.setItem("vericert_templates", JSON.stringify(templates));
 }
 
+export function updateMockTemplatePlaceholders(
+  id: string,
+  placeholders: any,
+  fieldsCount: number
+): any {
+  const templates = getStoredTemplates();
+  const idx = templates.findIndex((t: any) => String(t.id) === id);
+  if (idx === -1) return null;
+  const updated = [...templates];
+  updated[idx] = {
+    ...updated[idx],
+    placeholders,
+    fieldsCount
+  };
+  saveStoredTemplates(updated);
+  return updated[idx];
+}
+
 export function createMockCertificate(data: {
   recipientName: string;
   recipientEmail?: string;

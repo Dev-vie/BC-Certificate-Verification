@@ -49,7 +49,7 @@ function FieldButton({
         }}
         className={`flex-1 flex items-center justify-between p-2.5 rounded-lg text-sm transition-all cursor-pointer ${
           isSelected
-            ? "bg-[#3D876C]/15 text-[#3D876C] font-semibold border border-[#3D876C]/40"
+            ? "bg-primary/15 text-primary font-semibold border border-primary/40"
             : isAdded
             ? "text-foreground hover:bg-background/80 bg-background/40"
             : "text-foreground hover:bg-background"
@@ -60,8 +60,8 @@ function FieldButton({
             size={16}
             className={
               isSelected || isAdded
-                ? "text-[#3D876C]"
-                : "text-muted-foreground group-hover:text-[#3D876C]"
+                ? "text-primary"
+                : "text-muted-foreground group-hover:text-primary"
             }
           />
           <span className="truncate">{field.name}</span>
@@ -70,8 +70,8 @@ function FieldButton({
           <span
             className={`text-xs px-1.5 py-0.5 rounded-xs font-semibold ${
               isSelected
-                ? "bg-[#3D876C] text-white"
-                : "text-[#3D876C] bg-[#3D876C]/10"
+                ? "bg-primary text-white"
+                : "text-primary bg-primary/10"
             }`}
           >
             {isSelected ? "Selected" : "Placed"}

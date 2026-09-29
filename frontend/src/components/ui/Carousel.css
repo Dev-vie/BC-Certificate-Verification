@@ -40,7 +40,7 @@
 .carousel-nav-btn:hover {
   background: rgba(61, 135, 108, 0.15);
   border-color: rgba(61, 135, 108, 0.4);
-  color: #4ca385;
+  color: var(--primary-light);
   transform: scale(1.08);
 }
 
@@ -49,7 +49,7 @@
 }
 
 .carousel-nav-btn:focus-visible {
-  outline: 2px solid #4ca385;
+  outline: 2px solid var(--primary-light);
   outline-offset: 2px;
 }
 
@@ -126,7 +126,7 @@
   height: 34px;
   border-radius: 12px;
   background-color: rgba(61, 135, 108, 0.15);
-  color: #4ca385;
+  color: var(--primary-light);
   font-weight: 800;
   font-size: 14px;
   border: 1px solid rgba(61, 135, 108, 0.3);
@@ -140,7 +140,7 @@
   justify-content: center;
   border-radius: 12px;
   background-color: rgba(61, 135, 108, 0.1);
-  color: #4ca385;
+  color: var(--primary-light);
 }
 
 .carousel-badge {
@@ -151,7 +151,7 @@
   padding: 4px 8px;
   border-radius: 8px;
   background: rgba(61, 135, 108, 0.12);
-  color: #4ca385;
+  color: var(--primary-light);
 }
 
 .carousel-item-content {
@@ -200,12 +200,12 @@
 }
 
 .carousel-indicator:focus-visible {
-  outline: 2px solid #4ca385;
+  outline: 2px solid var(--primary-light);
   outline-offset: 2px;
 }
 
 .carousel-indicator.active {
-  background-color: #4ca385;
+  background-color: var(--primary-light);
   width: 24px;
 }
 

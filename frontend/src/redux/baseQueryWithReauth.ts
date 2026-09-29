@@ -15,6 +15,7 @@ import {
   deleteMockCertificate,
   getStoredTemplates,
   MOCK_INSTITUTION,
+  updateMockTemplatePlaceholders,
 } from "../data/mockStore";
 
 const BASE_URL = getApiBaseUrl();
@@ -137,8 +138,10 @@ function handleMockFallback(args: string | FetchArgs) {
   }
 
   if (url.startsWith("/templates/") && method === "PATCH") {
-    const templates = getStoredTemplates();
-    return { data: { template: templates[0] } };
+    const id = url.split("/")[2] || "";
+    const payload = body as any;
+    const updated = updateMockTemplatePlaceholders(id, payload?.placeholders, payload?.fieldsCount || 0);
+    return { data: { template: updated || getStoredTemplates()[0] } };
   }
 
   if (url === "/auth/me") {

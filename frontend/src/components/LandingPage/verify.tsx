@@ -296,12 +296,12 @@ export function Verify() {
                         <div className="pt-2 border-t border-white/10 space-y-3">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-1.5">
-                              <Sparkles className="w-3.5 h-3.5 text-[#4ca385]" />
+                              <Sparkles className="w-3.5 h-3.5 text-primary-light" />
                               <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
                                 Try Sample Certificates:
                               </span>
                             </div>
-                            <span className="text-[10px] text-[#4ca385] font-semibold bg-[#3D876C]/15 px-2 py-0.5 rounded-full border border-[#3D876C]/30">
+                            <span className="text-[10px] text-primary-light font-semibold bg-[#3D876C]/15 px-2 py-0.5 rounded-full border border-[#3D876C]/30">
                               Public Registry
                             </span>
                           </div>
@@ -313,7 +313,7 @@ export function Verify() {
                               className="p-3 rounded-xl bg-slate-900/60 hover:bg-[#3D876C]/10 border border-white/10 hover:border-[#3D876C]/50 text-left transition-all cursor-pointer group shadow-sm hover:scale-[1.01]"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-xs font-bold text-white group-hover:text-[#4ca385]">
+                                <span className="text-xs font-bold text-white group-hover:text-primary-light">
                                   Alex Rivera &bull; Valid Diploma
                                 </span>
                                 <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">
@@ -331,7 +331,7 @@ export function Verify() {
                               className="p-3 rounded-xl bg-slate-900/60 hover:bg-[#3D876C]/10 border border-white/10 hover:border-[#3D876C]/50 text-left transition-all cursor-pointer group shadow-sm hover:scale-[1.01]"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-xs font-bold text-white group-hover:text-[#4ca385]">
+                                <span className="text-xs font-bold text-white group-hover:text-primary-light">
                                   Elena Rostova &bull; Summa Cum Laude
                                 </span>
                                 <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">
@@ -367,7 +367,7 @@ export function Verify() {
                               className="p-3 rounded-xl bg-slate-900/60 hover:bg-[#3D876C]/10 border border-white/10 hover:border-[#3D876C]/50 text-left transition-all cursor-pointer group shadow-sm hover:scale-[1.01]"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-xs font-bold text-white group-hover:text-[#4ca385]">
+                                <span className="text-xs font-bold text-white group-hover:text-primary-light">
                                   Kwame Asante &bull; ZK-Proof
                                 </span>
                                 <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">
@@ -392,7 +392,7 @@ export function Verify() {
                                 }
                               }}
                               placeholder="Or enter any Certificate ID (e.g. VC-2026-BLOCK-9842) / Hash..."
-                              className="flex-1 px-4 py-2.5 bg-slate-900/90 border border-white/15 rounded-xl text-xs text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#4ca385]"
+                              className="flex-1 px-4 py-2.5 bg-slate-900/90 border border-white/15 rounded-xl text-xs text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-primary-light"
                             />
                             <Button
                               size="sm"

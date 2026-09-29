@@ -129,7 +129,7 @@ export const CertificateDetailPage: React.FC = () => {
               </p>
               <button
                 onClick={() => navigate("/certificates")}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#3D876C] hover:bg-[#2C6450] text-white font-semibold rounded-xl text-sm transition-colors cursor-pointer shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white font-semibold rounded-xl text-sm transition-colors cursor-pointer shadow-sm"
               >
                 Back to Certificates
               </button>

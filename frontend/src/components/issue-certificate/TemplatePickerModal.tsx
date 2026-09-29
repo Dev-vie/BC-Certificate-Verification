@@ -57,7 +57,7 @@ const TemplatePickerItem = ({
       onClick={() => onSelect(template.id)}
       className={`w-full rounded-2xl border p-4 text-left transition-all cursor-pointer ${
         isSelected
-          ? "border-[#3D876C] bg-[#3D876C]/10 shadow-sm"
+          ? "border-primary bg-primary/10 shadow-sm"
           : "border-border bg-background hover:border-muted-foreground/40 hover:bg-card"
       }`}
     >
@@ -83,7 +83,7 @@ const TemplatePickerItem = ({
           ) : (
             <div
               className={`h-full w-full flex items-center justify-center bg-gradient-to-br ${
-                template.gradientClass || "from-emerald-500 to-teal-700"
+                template.gradientClass || "from-primary to-primary-hover"
               } text-white`}
             >
               <Layers size={16} />

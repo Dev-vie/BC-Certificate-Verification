@@ -336,9 +336,9 @@ export const DashboardPage = () => {
       label: "Verified Today",
       value: verifiedToday.toLocaleString(),
       icon: CheckCircle2,
-      valColor: "text-[#3D876C] dark:text-[#4ca385]",
-      iconColor: "text-[#3D876C] dark:text-[#4ca385]",
-      progressColor: "bg-[#3D876C] dark:bg-[#4ca385]",
+      valColor: "text-primary dark:text-primary-light",
+      iconColor: "text-primary dark:text-primary-light",
+      progressColor: "bg-primary dark:bg-primary-light",
       progress: Math.min(100, verifiedCount > 0 ? (verifiedToday / verifiedCount) * 100 : 0),
     },
     {
@@ -356,19 +356,19 @@ export const DashboardPage = () => {
       icon: TrendingUp,
       valColor:
         verificationRate >= 80
-          ? "text-[#3D876C] dark:text-[#4ca385]"
+          ? "text-primary dark:text-primary-light"
           : verificationRate >= 50
           ? "text-amber-500"
           : "text-rose-500",
       iconColor:
         verificationRate >= 80
-          ? "text-[#3D876C] dark:text-[#4ca385]"
+          ? "text-primary dark:text-primary-light"
           : verificationRate >= 50
           ? "text-amber-500"
           : "text-rose-500",
       progressColor:
         verificationRate >= 80
-          ? "bg-[#3D876C] dark:bg-[#4ca385]"
+          ? "bg-primary dark:bg-primary-light"
           : verificationRate >= 50
           ? "bg-amber-500"
           : "bg-rose-500",
@@ -652,7 +652,7 @@ export const DashboardPage = () => {
                                   {copiedHash === displayHash ? (
                                     <Check
                                       size={13}
-                                      className="text-emerald-500"
+                                      className="text-primary"
                                     />
                                   ) : (
                                     <Copy size={13} />
@@ -710,7 +710,7 @@ export const DashboardPage = () => {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-slate-900 text-white rounded-xl shadow-2xl border border-white/10 text-xs font-semibold"
           >
-            <CheckCircle2 size={16} className="text-emerald-400" />
+            <CheckCircle2 size={16} className="text-primary-light" />
             <span>{toastMessage}</span>
           </motion.div>
         )}

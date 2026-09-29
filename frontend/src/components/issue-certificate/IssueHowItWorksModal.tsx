@@ -80,7 +80,7 @@ export const IssueHowItWorksModal: React.FC<IssueHowItWorksModalProps> = ({
 
           <div className="flex items-start justify-between p-6 border-b border-border bg-muted/20">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#3D876C]/10 text-[#3D876C] flex items-center justify-center border border-[#3D876C]/20">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
                 <FileCheck2 className="w-5 h-5" />
               </div>
               <div>
@@ -115,10 +115,10 @@ export const IssueHowItWorksModal: React.FC<IssueHowItWorksModalProps> = ({
               />
             </div>
 
-            <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-[#3D876C]/30 flex items-start gap-3">
-              <Lightbulb className="w-4 h-4 text-[#3D876C] shrink-0 mt-0.5" />
+            <div className="p-3.5 rounded-xl bg-primary/10 border border-primary/30 flex items-start gap-3">
+              <Lightbulb className="w-4 h-4 text-primary shrink-0 mt-0.5" />
               <div className="text-xs text-foreground">
-                <span className="font-bold text-[#3D876C] inline">Bulk CSV Tip: </span>
+                <span className="font-bold text-primary inline">Bulk CSV Tip: </span>
                 <span className="text-muted-foreground leading-relaxed">
                   Download our sample CSV template from the bulk tab to format your student recipient rows accurately.
                 </span>
@@ -130,7 +130,7 @@ export const IssueHowItWorksModal: React.FC<IssueHowItWorksModalProps> = ({
             <Button
               type="button"
               onClick={onClose}
-              className="bg-[#3D876C] hover:bg-[#2C6450] text-white px-6 font-semibold cursor-pointer rounded-xl"
+              className="bg-primary hover:bg-primary-hover text-white px-6 font-semibold cursor-pointer rounded-xl"
             >
               <CheckCircle2 className="w-4 h-4 mr-2" />
               Got it, let's issue

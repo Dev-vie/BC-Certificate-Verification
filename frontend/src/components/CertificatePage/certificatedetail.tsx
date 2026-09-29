@@ -147,7 +147,7 @@ export const CertificateDetail: React.FC<CertificateDetailProps> = ({
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-muted-foreground bg-card border border-border rounded-xl hover:bg-background transition-colors cursor-pointer"
               >
                 {copied ? (
-                  <Check size={13} className="text-[#3D876C]" />
+                  <Check size={13} className="text-primary" />
                 ) : (
                   <Copy size={13} />
                 )}
@@ -168,7 +168,7 @@ export const CertificateDetail: React.FC<CertificateDetailProps> = ({
                   href={certificate.pdfPath!}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-medium text-[#3D876C] hover:underline"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
                 >
                   <ExternalLink size={13} /> Open PDF in new window
                 </a>
@@ -189,7 +189,7 @@ export const CertificateDetail: React.FC<CertificateDetailProps> = ({
 
         <div className="bg-card rounded-3xl border border-border shadow-sm p-6 space-y-6">
           <div className="flex items-center gap-2 pb-4 border-b border-border">
-            <Award className="text-[#3D876C] w-5 h-5" />
+            <Award className="text-primary w-5 h-5" />
             <h3 className="font-bold text-foreground text-sm">
               Certificate Information
             </h3>
@@ -270,7 +270,7 @@ export const CertificateDetail: React.FC<CertificateDetailProps> = ({
                   href={certificate.qrCode}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-medium text-muted-foreground hover:text-[#3D876C] hover:underline break-all text-center max-w-full"
+                  className="text-xs font-medium text-muted-foreground hover:text-primary hover:underline break-all text-center max-w-full"
                 >
                   {certificate.qrCode}
                 </a>
@@ -304,7 +304,7 @@ export const CertificateDetail: React.FC<CertificateDetailProps> = ({
                 href={`https://etherscan.io/tx/${certificate.txHash}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#3D876C] hover:underline pt-2"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline pt-2"
               >
                 <ExternalLink size={13} />
                 View on Etherscan

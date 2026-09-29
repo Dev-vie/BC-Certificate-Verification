@@ -129,10 +129,10 @@ export const Header: React.FC<HeaderProps> = ({ breadcrumb }) => {
             <img
               src={avatar}
               alt={name}
-              className="w-7 h-7 rounded-full object-cover border border-[#3D876C]/30"
+              className="w-7 h-7 rounded-full object-cover border border-primary/30"
             />
           ) : (
-            <div className="w-7 h-7 rounded-full bg-[#3D876C] text-white flex items-center justify-center font-bold text-xs">
+            <div className="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs">
               {initial}
             </div>
           )}

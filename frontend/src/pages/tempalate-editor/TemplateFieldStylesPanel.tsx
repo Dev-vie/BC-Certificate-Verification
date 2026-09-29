@@ -47,7 +47,7 @@ export function TemplateFieldStylesPanel({
                     onChange={(e) =>
                       updateField({ width: Number(e.target.value) })
                     }
-                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-[#3D876C] outline-none"
+                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
                 <div className="flex-1">
@@ -60,7 +60,7 @@ export function TemplateFieldStylesPanel({
                     onChange={(e) =>
                       updateField({ height: Number(e.target.value) })
                     }
-                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-[#3D876C] outline-none"
+                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
               </div>
@@ -75,12 +75,12 @@ export function TemplateFieldStylesPanel({
                 value={fontSearch}
                 onChange={(e) => setFontSearch(e.target.value)}
                 placeholder="Search fonts..."
-                className="w-full mb-2 bg-background border border-border text-foreground rounded-lg p-2.5 text-sm focus:ring-1 focus:ring-[#3D876C] outline-none placeholder:text-muted-foreground/60"
+                className="w-full mb-2 bg-background border border-border text-foreground rounded-lg p-2.5 text-sm focus:ring-1 focus:ring-primary outline-none placeholder:text-muted-foreground/60"
               />
               <select
                 value={selectedField.fontFamily}
                 onChange={(e) => updateField({ fontFamily: e.target.value })}
-                className="w-full bg-background border border-border text-foreground rounded-lg p-2.5 text-sm focus:ring-1 focus:ring-[#3D876C] outline-none"
+                className="w-full bg-background border border-border text-foreground rounded-lg p-2.5 text-sm focus:ring-1 focus:ring-primary outline-none"
               >
                 {filteredFontOptions.map((font) => (
                   <option key={font} value={font}>
@@ -101,7 +101,7 @@ export function TemplateFieldStylesPanel({
                   onChange={(e) =>
                     updateField({ fontSize: Number(e.target.value) })
                   }
-                  className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm font-semibold text-right focus:ring-1 focus:ring-[#3D876C] outline-none"
+                  className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm font-semibold text-right focus:ring-1 focus:ring-primary outline-none"
                 />
               </div>
               <div className="flex-1">
@@ -115,7 +115,7 @@ export function TemplateFieldStylesPanel({
                     }
                     className={`flex-1 p-1.5 rounded-md font-bold text-sm cursor-pointer ${
                       selectedField.isBold
-                        ? "bg-[#3D876C] text-white shadow-sm"
+                        ? "bg-primary text-white shadow-sm"
                         : "text-muted-foreground hover:bg-card"
                     }`}
                   >
@@ -127,7 +127,7 @@ export function TemplateFieldStylesPanel({
                     }
                     className={`flex-1 p-1.5 rounded-md italic text-sm font-serif cursor-pointer ${
                       selectedField.isItalic
-                        ? "bg-[#3D876C] text-white shadow-sm"
+                        ? "bg-primary text-white shadow-sm"
                         : "text-muted-foreground hover:bg-card"
                     }`}
                   >
@@ -168,7 +168,7 @@ export function TemplateFieldStylesPanel({
                     onClick={() => updateField({ align })}
                     className={`flex-1 p-2 rounded-md flex justify-center cursor-pointer ${
                       selectedField.align === align
-                        ? "bg-[#3D876C] text-white shadow-sm"
+                        ? "bg-primary text-white shadow-sm"
                         : "text-muted-foreground hover:bg-card"
                     }`}
                   >
@@ -211,7 +211,7 @@ export function TemplateFieldStylesPanel({
                     type="number"
                     value={selectedField.x}
                     onChange={(e) => updateField({ x: Number(e.target.value) })}
-                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-[#3D876C] outline-none"
+                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
                 <div className="flex-1">
@@ -222,7 +222,7 @@ export function TemplateFieldStylesPanel({
                     type="number"
                     value={selectedField.y}
                     onChange={(e) => updateField({ y: Number(e.target.value) })}
-                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-[#3D876C] outline-none"
+                    className="w-full bg-background border border-border text-foreground rounded-lg p-2 text-sm focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
               </div>

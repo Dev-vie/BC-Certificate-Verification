@@ -2,8 +2,8 @@ import { CircleDot } from 'lucide-react';
 
 export const BlockchainStatusCard = () => {
   return (
-    <section className="rounded-2xl border border-emerald-200/80 bg-emerald-50/70 p-4 shadow-sm">
-      <div className="flex items-center gap-2 text-[#3D876C]">
+    <section className="rounded-2xl border border-primary-light/80 bg-primary-lighter/70 p-4 shadow-sm">
+      <div className="flex items-center gap-2 text-primary">
         <CircleDot size={14} fill="currentColor" />
         <h3 className="text-sm font-semibold">Blockchain Ready</h3>
       </div>

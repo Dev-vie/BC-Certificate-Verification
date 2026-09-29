@@ -68,7 +68,7 @@ export default function TemplateEditorPage() {
         </p>
         <Link
           to="/templates"
-          className="text-sm font-semibold text-[#3D876C] hover:underline"
+          className="text-sm font-semibold text-primary hover:underline"
         >
           Back to Templates
         </Link>
@@ -82,7 +82,7 @@ export default function TemplateEditorPage() {
         <p className="text-sm text-muted-foreground">Template not found.</p>
         <Link
           to="/templates"
-          className="text-sm font-semibold text-[#3D876C] hover:underline"
+          className="text-sm font-semibold text-primary hover:underline"
         >
           Back to Templates
         </Link>

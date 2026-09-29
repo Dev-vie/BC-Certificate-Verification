@@ -266,7 +266,7 @@ export const CertificatePage: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setShowIssueDropdown(!showIssueDropdown)}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 shadow-lg shadow-emerald-500/10 transition-all cursor-pointer outline-none focus:ring-4 focus:ring-emerald-100"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 shadow-lg shadow-primary/10 transition-all cursor-pointer outline-none focus:ring-4 focus:ring-primary-lighter"
               >
                 <Plus size={16} />
                 Issue New
@@ -324,8 +324,8 @@ export const CertificatePage: React.FC = () => {
               onClick={() => setStatusFilter("All")}
               className={`dashboard-stat-card bg-card rounded-xl border p-6 shadow-sm flex flex-col justify-between cursor-pointer select-none active:scale-98 transition-all duration-300 ${
                 statusFilter === "All"
-                  ? "border-[#3D876C] dark:border-[#4ca385] ring-1 ring-[#3D876C]/20 bg-[#3D876C]/[0.01]"
-                  : "border-border hover:border-[#3D876C]/20"
+                  ? "border-primary dark:border-primary-light ring-1 ring-primary/20 bg-primary/[0.01]"
+                  : "border-border hover:border-primary/20"
               }`}
             >
               <div className="flex items-start justify-between mb-5">
@@ -354,13 +354,13 @@ export const CertificatePage: React.FC = () => {
               onClick={() => setStatusFilter("issued")}
               className={`dashboard-stat-card bg-card rounded-xl border p-6 shadow-sm flex flex-col justify-between cursor-pointer select-none active:scale-98 transition-all duration-300 ${
                 statusFilter === "issued"
-                  ? "border-[#3D876C] dark:border-[#4ca385] ring-1 ring-[#3D876C]/20 bg-[#3D876C]/[0.01]"
-                  : "border-border hover:border-[#3D876C]/20"
+                  ? "border-primary dark:border-primary-light ring-1 ring-primary/20 bg-primary/[0.01]"
+                  : "border-border hover:border-primary/20"
               }`}
             >
               <div className="flex items-start justify-between mb-5">
                 <div>
-                  <p className="text-3xl font-extrabold text-[#3D876C] dark:text-[#4ca385] tracking-tight leading-none mb-2">
+                  <p className="text-3xl font-extrabold text-primary dark:text-primary-light tracking-tight leading-none mb-2">
                     {verifiedCount}
                   </p>
                   <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
@@ -368,12 +368,12 @@ export const CertificatePage: React.FC = () => {
                   </p>
                 </div>
                 <div>
-                  <CheckCircle2 size={28} className="text-[#3D876C] dark:text-[#4ca385]" />
+                  <CheckCircle2 size={28} className="text-primary dark:text-primary-light" />
                 </div>
               </div>
               <div className="w-full bg-slate-100 dark:bg-slate-800/80 h-2 rounded-full overflow-hidden mt-1">
                 <div
-                  className="h-full bg-[#3D876C] dark:bg-[#4ca385] rounded-full transition-all duration-500"
+                  className="h-full bg-primary dark:bg-primary-light rounded-full transition-all duration-500"
                   style={{ width: `${totalIssued > 0 ? (verifiedCount / totalIssued) * 100 : 0}%` }}
                 />
               </div>
@@ -384,8 +384,8 @@ export const CertificatePage: React.FC = () => {
               onClick={() => setStatusFilter("processing")}
               className={`dashboard-stat-card bg-card rounded-xl border p-6 shadow-sm flex flex-col justify-between cursor-pointer select-none active:scale-98 transition-all duration-300 ${
                 statusFilter === "processing"
-                  ? "border-[#3D876C] dark:border-[#4ca385] ring-1 ring-[#3D876C]/20 bg-[#3D876C]/[0.01]"
-                  : "border-border hover:border-[#3D876C]/20"
+                  ? "border-primary dark:border-primary-light ring-1 ring-primary/20 bg-primary/[0.01]"
+                  : "border-border hover:border-primary/20"
               }`}
             >
               <div className="flex items-start justify-between mb-5">
@@ -414,8 +414,8 @@ export const CertificatePage: React.FC = () => {
               onClick={() => setStatusFilter("revoked")}
               className={`dashboard-stat-card bg-card rounded-xl border p-6 shadow-sm flex flex-col justify-between cursor-pointer select-none active:scale-98 transition-all duration-300 ${
                 statusFilter === "revoked"
-                  ? "border-[#3D876C] dark:border-[#4ca385] ring-1 ring-[#3D876C]/20 bg-[#3D876C]/[0.01]"
-                  : "border-border hover:border-[#3D876C]/20"
+                  ? "border-primary dark:border-primary-light ring-1 ring-primary/20 bg-primary/[0.01]"
+                  : "border-border hover:border-primary/20"
               }`}
             >
               <div className="flex items-start justify-between mb-5">

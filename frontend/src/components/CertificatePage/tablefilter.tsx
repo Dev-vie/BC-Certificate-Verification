@@ -124,7 +124,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="block w-full ps-10 pe-3 py-2 bg-background border border-border text-foreground text-sm rounded-xl focus:ring-2 focus:ring-[#3D876C]/15 focus:border-[#3D876C]/50 outline-none placeholder:text-muted-foreground/60 transition-all"
+            className="block w-full ps-10 pe-3 py-2 bg-background border border-border text-foreground text-sm rounded-xl focus:ring-2 focus:ring-primary/15 focus:border-primary/50 outline-none placeholder:text-muted-foreground/60 transition-all"
             placeholder="Search name, course, certificate ID..."
           />
         </div>
@@ -178,7 +178,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
                       onClick={() => handleStatusFilterSelect(option.value)}
                       className={`flex items-center w-full px-4 py-2.5 text-sm text-left transition-colors cursor-pointer hover:bg-background ${
                         statusFilter === option.value
-                          ? "bg-[#3D876C]/10 text-[#3D876C] font-semibold"
+                          ? "bg-primary/10 text-primary font-semibold"
                           : "text-foreground"
                       }`}
                     >
@@ -215,7 +215,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
                     }
                   }}
                   onChange={(e) => onToggleSelectAll(e.target.checked)}
-                  className="w-4 h-4 border border-border rounded bg-card text-[#3D876C] focus:ring-[#3D876C] cursor-pointer"
+                  className="w-4 h-4 border border-border rounded bg-card text-primary focus:ring-primary cursor-pointer"
                 />
               </th>
               <th scope="col" className="px-6 py-4 font-semibold">
@@ -256,7 +256,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
                     transition={{ duration: 0.2, delay: index * 0.04 }}
                     onClick={() => onRowClick(cert.id)}
                     className={`bg-card hover:bg-background/50 transition-colors cursor-pointer group ${
-                      isSelected ? "bg-emerald-500/[0.02]" : ""
+                      isSelected ? "bg-primary/[0.02]" : ""
                     }`}
                   >
 
@@ -265,7 +265,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
                         type="checkbox"
                         checked={isSelected}
                         onChange={() => onToggleSelectRow(cert.id)}
-                        className="w-4 h-4 border border-border rounded bg-card text-[#3D876C] focus:ring-[#3D876C] cursor-pointer"
+                        className="w-4 h-4 border border-border rounded bg-card text-primary focus:ring-primary cursor-pointer"
                       />
                     </td>
 
@@ -279,7 +279,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
                           {getAvatarInitials(cert.recipientName)}
                         </div>
                         <div>
-                          <p className="font-semibold text-foreground group-hover:text-[#3D876C] transition-colors">
+                          <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
                             {cert.recipientName}
                           </p>
                           <p className="text-xs text-muted-foreground">
@@ -325,7 +325,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
                       <div className="flex items-center justify-center gap-1">
                         <button
                           onClick={() => onViewDetail(cert.id)}
-                          className="p-1.5 rounded-lg text-muted-foreground hover:text-[#3D876C] hover:bg-emerald-500/10 transition-all cursor-pointer"
+                          className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all cursor-pointer"
                           title="View Certificate"
                         >
                           <Eye className="w-4 h-4" />

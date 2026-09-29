@@ -69,7 +69,7 @@ export const CreateNewTemplate: React.FC<CreateNewTemplateProps> = ({
               <button
                 type="button"
                 onClick={() => setShowGuide(true)}
-                className="inline-flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer p-1"
+                className="inline-flex items-center justify-center text-slate-400 hover:text-primary-light transition-colors cursor-pointer p-1"
               >
                 <CircleHelp size={16} />
               </button>
@@ -92,19 +92,19 @@ export const CreateNewTemplate: React.FC<CreateNewTemplateProps> = ({
           <div
             onDragOver={handleDragOver}
             onDrop={handleDrop}
-            className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-border rounded-2xl bg-background hover:bg-emerald-500/10 hover:border-[#3D876C]/50 transition-colors cursor-pointer group"
+            className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-border rounded-2xl bg-background hover:bg-primary/10 hover:border-primary/50 transition-colors cursor-pointer group"
           >
-            <div className="w-12 h-12 flex items-center justify-center bg-card border border-border rounded-xl shadow-sm mb-4 group-hover:scale-105 transition-transform text-muted-foreground group-hover:text-[#3D876C]">
+            <div className="w-12 h-12 flex items-center justify-center bg-card border border-border rounded-xl shadow-sm mb-4 group-hover:scale-105 transition-transform text-muted-foreground group-hover:text-primary">
               <UploadCloud size={24} />
             </div>
 
             <p className="text-sm font-medium text-foreground text-center relative">
               {file ? (
-                <span className="text-[#3D876C] font-bold">{file.name}</span>
+                <span className="text-primary font-bold">{file.name}</span>
               ) : (
                 <>
                   Drop a PDF here or{" "}
-                  <label className="text-[#3D876C] hover:underline cursor-pointer">
+                  <label className="text-primary hover:underline cursor-pointer">
                     click to browse
                     <input
                       type="file"
@@ -132,7 +132,7 @@ export const CreateNewTemplate: React.FC<CreateNewTemplateProps> = ({
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g. AWS Cloud Practitioner"
-                className="w-full px-4 py-3 rounded-xl border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-[#3D876C]/20 focus:border-[#3D876C]/50 transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 transition-all"
               />
             </div>
           </div>

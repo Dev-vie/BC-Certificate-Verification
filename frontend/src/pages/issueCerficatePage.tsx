@@ -241,14 +241,14 @@ const IssueCerficatePage = () => {
                 <button
                   type="button"
                   onClick={() => setIsHowItWorksOpen(true)}
-                  className="inline-flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer p-1"
+                  className="inline-flex items-center justify-center text-slate-400 hover:text-primary-light transition-colors cursor-pointer p-1"
                 >
                   <CircleHelp size={18} />
                 </button>
                 <button
                   type="button"
                   onClick={openCreateModal}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all shadow-sm shadow-emerald-500/10 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all shadow-sm shadow-primary/10 cursor-pointer"
                 >
                   <Plus size={16} />
                   <span>New Template</span>
@@ -311,10 +311,10 @@ const IssueCerficatePage = () => {
           {!isLoadingTemplates && !isTemplatesError && !selectedTemplate && (
             <div className="space-y-6">
 
-              <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card via-card to-emerald-500/5 p-8 sm:p-10 shadow-sm">
-                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card via-card to-primary/5 p-8 sm:p-10 shadow-sm">
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
                 <div className="relative z-10 max-w-2xl">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-emerald-600 dark:text-primary-light text-xs font-semibold uppercase tracking-wider mb-4">
                     <LayoutTemplate size={13} />
                     <span>Create Your Template First</span>
                   </div>
@@ -333,7 +333,7 @@ const IssueCerficatePage = () => {
                     <button
                       type="button"
                       onClick={openCreateModal}
-                      className="inline-flex items-center gap-2 px-5 py-3 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all shadow-md shadow-emerald-500/20 cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-3 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all shadow-md shadow-primary/20 cursor-pointer"
                     >
                       <Plus size={18} />
                       <span>Create New Template</span>
@@ -352,7 +352,7 @@ const IssueCerficatePage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div className="p-6 rounded-2xl bg-card border border-border shadow-xs hover:border-primary/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-primary flex items-center justify-center mb-4 font-bold text-sm">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 font-bold text-sm">
                     1
                   </div>
                   <h3 className="text-base font-bold text-foreground">

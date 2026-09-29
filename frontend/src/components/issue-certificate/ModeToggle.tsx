@@ -11,7 +11,7 @@ export const ModeToggle = ({ value, onChange }: ModeToggleProps) => {
         onClick={() => onChange('individual')}
         className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all cursor-pointer ${
           value === 'individual'
-            ? 'bg-[#3D876C] text-white shadow-sm'
+            ? 'bg-primary text-white shadow-sm'
             : 'text-muted-foreground hover:text-foreground'
         }`}
       >
@@ -23,7 +23,7 @@ export const ModeToggle = ({ value, onChange }: ModeToggleProps) => {
         onClick={() => onChange('bulk')}
         className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all cursor-pointer ${
           value === 'bulk'
-            ? 'bg-[#3D876C] text-white shadow-sm'
+            ? 'bg-primary text-white shadow-sm'
             : 'text-muted-foreground hover:text-foreground'
         }`}
       >

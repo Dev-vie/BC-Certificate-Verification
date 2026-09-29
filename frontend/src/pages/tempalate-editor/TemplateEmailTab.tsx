@@ -250,7 +250,7 @@ export function TemplateEmailTab({
             <span
               className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold ${
                 hasNameTag
-                  ? "bg-emerald-500/10 text-[#3D876C] border border-emerald-500/20"
+                  ? "bg-primary/10 text-primary border border-primary/20"
                   : "bg-amber-500/10 text-amber-600 border border-amber-500/20"
               }`}
             >
@@ -338,7 +338,7 @@ export function TemplateEmailTab({
                 onClick={() => handleApplyPreset("standard")}
                 className={`px-2 py-1 text-xs font-medium rounded-md border transition-all cursor-pointer ${
                   activePreset === "standard"
-                    ? "bg-[#3D876C] text-white border-[#3D876C]"
+                    ? "bg-primary text-white border-primary"
                     : "bg-card border-border text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -349,7 +349,7 @@ export function TemplateEmailTab({
                 onClick={() => handleApplyPreset("longName")}
                 className={`px-2 py-1 text-xs font-medium rounded-md border transition-all cursor-pointer ${
                   activePreset === "longName"
-                    ? "bg-[#3D876C] text-white border-[#3D876C]"
+                    ? "bg-primary text-white border-primary"
                     : "bg-card border-border text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -383,7 +383,7 @@ export function TemplateEmailTab({
                       Email Delivery Content
                     </h2>
                     <p className="text-xs text-muted-foreground">
-                      Use tags like <code className="text-[#3D876C] font-semibold">[Name]</code> or <code className="text-[#3D876C] font-semibold">[Course]</code> to personalize emails.
+                      Use tags like <code className="text-primary font-semibold">[Name]</code> or <code className="text-primary font-semibold">[Course]</code> to personalize emails.
                     </p>
                   </div>
                 </div>
@@ -402,7 +402,7 @@ export function TemplateEmailTab({
                     value={emailSubject}
                     onChange={(e) => setEmailSubject(e.target.value)}
                     placeholder="e.g. Congratulations [Recipient Name]! Your Certificate for [Course / Program] Has Been Issued"
-                    className="w-full p-3 rounded-xl border border-border bg-background text-foreground outline-none focus:ring-2 focus:ring-[#3D876C]/20 focus:border-[#3D876C]/50 transition-all text-sm font-medium"
+                    className="w-full p-3 rounded-xl border border-border bg-background text-foreground outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 transition-all text-sm font-medium"
                   />
                 </div>
 
@@ -426,7 +426,7 @@ export function TemplateEmailTab({
               <div className="bg-card rounded-2xl border border-border p-5">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1.5">
-                    <Tag size={14} className="text-[#3D876C]" />
+                    <Tag size={14} className="text-primary" />
                     <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">
                       Dynamic Tags
                     </h3>
@@ -444,10 +444,10 @@ export function TemplateEmailTab({
                     return (
                       <div
                         key={field.id}
-                        className="p-2.5 rounded-xl border border-border bg-background flex items-center justify-between gap-2 hover:border-[#3D876C]/40 transition-colors"
+                        className="p-2.5 rounded-xl border border-border bg-background flex items-center justify-between gap-2 hover:border-primary/40 transition-colors"
                       >
                         <div className="flex items-center gap-2 min-w-0">
-                          <span className="px-2 py-0.5 rounded-md bg-[#3D876C]/10 text-[#3D876C] font-semibold text-xs truncate">
+                          <span className="px-2 py-0.5 rounded-md bg-primary/10 text-primary font-semibold text-xs truncate">
                             [{tagLabel}]
                           </span>
                         </div>
@@ -476,7 +476,7 @@ export function TemplateEmailTab({
                             className="p-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-card transition-colors cursor-pointer"
                           >
                             {isCopied ? (
-                              <Check size={13} className="text-[#3D876C]" />
+                              <Check size={13} className="text-primary" />
                             ) : (
                               <Copy size={13} />
                             )}
@@ -516,7 +516,7 @@ export function TemplateEmailTab({
                         <div className="flex items-center gap-1.5">
                           <span className="w-3 h-3 rounded-full bg-red-400 inline-block" />
                           <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
-                          <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
+                          <span className="w-3 h-3 rounded-full bg-primary-light inline-block" />
                         </div>
                         <div className="h-4 w-px bg-slate-200 ml-1" />
                         <div className="flex items-center gap-1 text-slate-600 text-xs font-semibold">
@@ -546,7 +546,7 @@ export function TemplateEmailTab({
 
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-base shadow-sm">
+                          <div className="w-10 h-10 rounded-full bg-primary-hover text-white flex items-center justify-center font-bold text-base shadow-sm">
                             {testData.institutionName.charAt(0)}
                           </div>
                           <div>
@@ -574,14 +574,14 @@ export function TemplateEmailTab({
                     <div className="p-6 md:p-8 bg-slate-50 flex justify-center">
                       <div className="w-full max-w-[560px] bg-white rounded-2xl border border-slate-200/80 shadow-md overflow-hidden">
 
-                        <div className="bg-gradient-to-r from-[#3D876C] to-[#2C6450] p-7 text-center text-white">
-                          <div className="w-14 h-14 rounded-full bg-white text-[#3D876C] font-bold text-2xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                        <div className="bg-gradient-to-r from-primary to-primary-hover p-7 text-center text-white">
+                          <div className="w-14 h-14 rounded-full bg-white text-primary font-bold text-2xl flex items-center justify-center mx-auto mb-3 shadow-md">
                             {testData.institutionName.charAt(0)}
                           </div>
                           <h2 className="text-lg font-bold tracking-tight text-white">
                             {testData.institutionName}
                           </h2>
-                          <p className="text-xs text-emerald-100 mt-0.5 flex items-center justify-center gap-1 font-medium">
+                          <p className="text-xs text-primary-lighter mt-0.5 flex items-center justify-center gap-1 font-medium">
                             <ShieldCheck size={13} /> Official Blockchain Verified Credential
                           </p>
                         </div>
@@ -608,7 +608,7 @@ export function TemplateEmailTab({
                         <div className="p-6 text-center">
                           <button
                             type="button"
-                            className="inline-flex items-center gap-2 bg-[#3D876C] hover:bg-[#2C6450] text-white text-xs font-bold py-3 px-6 rounded-xl shadow-md transition-all cursor-pointer"
+                            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white text-xs font-bold py-3 px-6 rounded-xl shadow-md transition-all cursor-pointer"
                           >
                             <Download size={14} />
                             View & Download Certificate (PDF)
@@ -629,9 +629,9 @@ export function TemplateEmailTab({
 
                     <div className="px-6 py-2.5 bg-slate-100 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
                       <span>
-                        ✓ Tags like <code className="text-[#3D876C] font-semibold">[Name]</code> or <code className="text-[#3D876C] font-semibold">[Course]</code> are auto-filled on delivery.
+                        ✓ Tags like <code className="text-primary font-semibold">[Name]</code> or <code className="text-primary font-semibold">[Course]</code> are auto-filled on delivery.
                       </span>
-                      <span className="font-semibold text-[#3D876C]">
+                      <span className="font-semibold text-primary">
                         Desktop Ready
                       </span>
                     </div>
@@ -653,7 +653,7 @@ export function TemplateEmailTab({
 
                       <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-white">
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">
+                          <div className="w-8 h-8 rounded-full bg-primary-hover text-white flex items-center justify-center font-bold text-xs">
                             {testData.institutionName.charAt(0)}
                           </div>
                           <div>
@@ -677,11 +677,11 @@ export function TemplateEmailTab({
                       <div className="p-3 bg-slate-100 overflow-y-auto max-h-[460px]">
                         <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
 
-                          <div className="bg-gradient-to-r from-[#3D876C] to-[#2C6450] p-4 text-center text-white">
+                          <div className="bg-gradient-to-r from-primary to-primary-hover p-4 text-center text-white">
                             <h3 className="text-sm font-bold text-white">
                               {testData.institutionName}
                             </h3>
-                            <p className="text-[10px] text-emerald-100 mt-0.5">
+                            <p className="text-[10px] text-primary-lighter mt-0.5">
                               Blockchain Verified Credential
                             </p>
                           </div>
@@ -694,7 +694,7 @@ export function TemplateEmailTab({
                           <div className="p-4 pt-0 text-center">
                             <button
                               type="button"
-                              className="w-full py-2.5 bg-[#3D876C] text-white text-xs font-bold rounded-lg shadow-sm"
+                              className="w-full py-2.5 bg-primary text-white text-xs font-bold rounded-lg shadow-sm"
                             >
                               Download Certificate
                             </button>

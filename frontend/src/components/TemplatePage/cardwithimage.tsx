@@ -22,7 +22,7 @@ const getCategoryIcon = (category: string) => {
     case 'Academia':
       return <BookOpen size={13} className="text-purple-500" />;
     case 'Business':
-      return <Briefcase size={13} className="text-emerald-500" />;
+      return <Briefcase size={13} className="text-primary" />;
     case 'Data & AI':
       return <BarChart3 size={13} className="text-amber-500" />;
     case 'Engineering':
@@ -39,7 +39,7 @@ const getCategoryStyles = (category: string) => {
     case 'Academia':
       return { text: 'text-purple-500', bg: 'bg-purple-500/[0.08]' };
     case 'Business':
-      return { text: 'text-emerald-500', bg: 'bg-emerald-500/[0.08]' };
+      return { text: 'text-primary', bg: 'bg-primary/[0.08]' };
     case 'Data & AI':
       return { text: 'text-amber-500', bg: 'bg-amber-500/[0.08]' };
     case 'Engineering':
@@ -174,7 +174,7 @@ export const CardWithImage = ({
 
         {/* Status Badge */}
         <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-card/95 border border-border backdrop-blur-sm shadow-sm text-[10px] font-bold">
-          <span className={`w-1.5 h-1.5 rounded-full ${isDraft ? 'bg-amber-500' : 'bg-emerald-500'}`} />
+          <span className={`w-1.5 h-1.5 rounded-full ${isDraft ? 'bg-amber-500' : 'bg-primary'}`} />
           <span className="text-foreground/95">{status}</span>
         </div>
       </div>

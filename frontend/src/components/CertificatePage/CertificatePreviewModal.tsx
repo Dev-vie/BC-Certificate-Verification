@@ -115,7 +115,7 @@ export function CertificatePreviewModal({
             <a
               href={certificate.pdfPath}
               download={`${certId}.pdf`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#3D876C] hover:bg-[#2C6450] text-white text-sm font-semibold transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary hover:bg-primary-hover text-white text-sm font-semibold transition-colors cursor-pointer"
             >
               <Download size={14} />
               Download

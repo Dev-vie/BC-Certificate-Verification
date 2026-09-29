@@ -84,13 +84,13 @@ function TemplatePage() {
               <button
                 type="button"
                 onClick={() => setIsHowItWorksOpen(true)}
-                className="inline-flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer p-1"
+                className="inline-flex items-center justify-center text-slate-400 hover:text-primary-light transition-colors cursor-pointer p-1"
               >
                 <CircleHelp size={18} />
               </button>
               <button
                 onClick={openCreateModal}
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all shadow-sm shadow-emerald-500/10 cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all shadow-sm shadow-primary/10 cursor-pointer"
               >
                 <Plus size={16} />
                 New Template
@@ -104,8 +104,8 @@ function TemplatePage() {
                 <p className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">
                   Total Templates
                 </p>
-                <div className="p-2.5 rounded-xl border border-border bg-background/50 transition-all duration-300 group-hover:border-emerald-500/20 group-hover:bg-emerald-500/5">
-                  <Layers size={18} className="text-emerald-500 dark:text-emerald-400" />
+                <div className="p-2.5 rounded-xl border border-border bg-background/50 transition-all duration-300 group-hover:border-primary/20 group-hover:bg-primary/5">
+                  <Layers size={18} className="text-primary dark:text-primary-light" />
                 </div>
               </div>
               <p className="text-[32px] font-bold text-foreground leading-none tracking-tight">

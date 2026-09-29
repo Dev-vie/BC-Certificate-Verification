@@ -92,12 +92,12 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           onDrop={handleDrop}
           className={`flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-2xl transition-all duration-200 ${
             dragActive
-              ? 'border-[#3D876C] bg-emerald-500/10'
-              : 'border-border bg-background hover:border-[#3D876C]/50 hover:bg-emerald-500/5'
+              ? 'border-primary bg-primary/10'
+              : 'border-border bg-background hover:border-primary/50 hover:bg-primary/5'
           }`}
         >
           <div className="flex flex-col items-center justify-center pt-5 pb-6 px-4 text-center">
-            <div className={`p-3 rounded-full bg-emerald-500/10 text-[#3D876C] mb-4 transition-transform duration-200 ${dragActive ? 'scale-110' : ''}`}>
+            <div className={`p-3 rounded-full bg-primary/10 text-primary mb-4 transition-transform duration-200 ${dragActive ? 'scale-110' : ''}`}>
               <Upload className="w-8 h-8" />
             </div>
 
@@ -111,7 +111,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
             <button
               type="button"
               onClick={onButtonClick}
-              className="inline-flex items-center text-white bg-[#3D876C] hover:bg-[#2C6450] focus:ring-4 focus:ring-emerald-500/20 shadow-sm font-semibold rounded-xl text-sm px-4 py-2.5 transition-colors focus:outline-none cursor-pointer"
+              className="inline-flex items-center text-white bg-primary hover:bg-primary-hover focus:ring-4 focus:ring-primary/20 shadow-sm font-semibold rounded-xl text-sm px-4 py-2.5 transition-colors focus:outline-none cursor-pointer"
             >
               <Upload className="w-4 h-4 mr-2" />
               Browse file
@@ -119,8 +119,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center w-full h-64 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl p-6 text-center">
-          <div className="p-3 rounded-full bg-emerald-500/10 text-[#3D876C] mb-3">
+        <div className="flex flex-col items-center justify-center w-full h-64 border border-primary/20 bg-primary/5 rounded-2xl p-6 text-center">
+          <div className="p-3 rounded-full bg-primary/10 text-primary mb-3">
             <FileSpreadsheet className="w-8 h-8" />
           </div>
           <h4 className="text-sm font-semibold text-foreground max-w-md truncate">

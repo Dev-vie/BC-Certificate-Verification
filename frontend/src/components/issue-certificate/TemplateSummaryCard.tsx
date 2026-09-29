@@ -57,7 +57,7 @@ export const TemplateSummaryCard = ({ template, onChangeTemplate }: TemplateSumm
                 className="h-full w-full object-cover object-center"
               />
             ) : (
-              <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${template.gradientClass || 'from-emerald-500 to-teal-700'} text-white`}>
+              <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${template.gradientClass || 'from-primary to-primary-hover'} text-white`}>
                 <Layers size={18} />
               </div>
             )}
