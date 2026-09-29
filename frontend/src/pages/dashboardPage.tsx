@@ -169,7 +169,7 @@ export const DashboardPage = () => {
   }, []);
 
   const [certificates, setCertificates] = useState<any[]>(() => {
-    const saved = localStorage.getItem("authentix_certificates");
+    const saved = localStorage.getItem("vericert_certificates") || localStorage.getItem("authentix_certificates");
     if (saved !== null) {
       try {
         return JSON.parse(saved);
@@ -182,7 +182,7 @@ export const DashboardPage = () => {
 
   useEffect(() => {
     const syncCerts = () => {
-      const saved = localStorage.getItem("authentix_certificates");
+      const saved = localStorage.getItem("vericert_certificates") || localStorage.getItem("authentix_certificates");
       if (saved !== null) {
         try {
           setCertificates(JSON.parse(saved));

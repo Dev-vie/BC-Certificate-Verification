@@ -69,7 +69,7 @@ const ResetPassForm: React.FC = () => {
           <Lock className="w-4.5 h-4.5 text-white" />
         </div>
         <span className="font-bold text-lg text-white tracking-tight">
-          Authentix
+          VeriCert
         </span>
       </div>
 
@@ -193,7 +193,7 @@ const ResetPassForm: React.FC = () => {
           <Lock className="w-3.5 h-3.5 text-emerald-400" />
           <span>AES-256 Bit Encryption</span>
         </div>
-        <span className="font-mono">Authentix Security</span>
+        <span className="font-mono">VeriCert Security</span>
       </div>
 
     </div>

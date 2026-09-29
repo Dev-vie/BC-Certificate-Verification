@@ -26,7 +26,7 @@ const PendingApprovalPage: React.FC = () => {
             Registration Submitted
           </h2>
           <p className="text-slate-300 text-sm leading-relaxed mb-8">
-            Thank you for registering your institution with Authentix. Your account request is currently pending review by the system administrator. 
+            Thank you for registering your institution with VeriCert. Your account request is currently pending review by the system administrator. 
             <br /><br />
             An email notification will be sent to your registered address once the administrator has approved or rejected your application.
           </p>

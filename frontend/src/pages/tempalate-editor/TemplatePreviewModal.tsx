@@ -147,7 +147,7 @@ export function TemplatePreviewModal({
                   {field.id === "qrCode" ? (
                     <div className="w-full h-full flex items-center justify-center p-1">
                       <QRCodeSVG
-                        value="https://authentix.io/verify/SAMPLE-VERIFY-ID"
+                        value="https://vericert.io/verify/SAMPLE-VERIFY-ID"
                         size={Math.min(field.width, field.height) * 0.9}
                       />
                     </div>

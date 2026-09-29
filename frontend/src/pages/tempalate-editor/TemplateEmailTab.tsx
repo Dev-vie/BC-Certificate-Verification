@@ -43,7 +43,7 @@ const EMAIL_TEST_PRESETS = {
     grade: "Distinction",
     certificateId: "CERT-2026-4821",
     issueDate: "June 28, 2026",
-    institutionName: "Authentix Academy of Technology",
+    institutionName: "VeriCert Academy of Technology",
   },
   longName: {
     recipientName: "Dr. Alexander Montgomery-Cunningham III",
@@ -555,7 +555,7 @@ export function TemplateEmailTab({
                                 {testData.institutionName}
                               </span>
                               <span className="text-xs text-slate-400">
-                                &lt;noreply@authentix.io&gt;
+                                &lt;noreply@vericert.io&gt;
                               </span>
                             </div>
                             <p className="text-xs text-slate-500">
@@ -595,7 +595,7 @@ export function TemplateEmailTab({
                           <div className="px-7 py-3 text-center bg-slate-50/50 border-y border-slate-100">
                             <div className="inline-block p-3 bg-white rounded-xl border border-slate-200 shadow-xs">
                               <QRCodeSVG
-                                value="https://authentix.io/verify/SAMPLE-VERIFY-ID"
+                                value="https://vericert.io/verify/SAMPLE-VERIFY-ID"
                                 size={110}
                               />
                             </div>
@@ -620,7 +620,7 @@ export function TemplateEmailTab({
 
                         <div className="bg-slate-50 border-t border-slate-100 p-5 text-center">
                           <p className="text-[11px] text-slate-400 leading-relaxed">
-                            Sent directly by <strong>{testData.institutionName}</strong> via Authentix Certificate Verification System.<br />
+                            Sent directly by <strong>{testData.institutionName}</strong> via VeriCert Certificate Verification System.<br />
                             Please retain this email for your official academic records.
                           </p>
                         </div>

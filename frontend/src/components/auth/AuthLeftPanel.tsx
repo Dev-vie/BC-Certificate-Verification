@@ -44,11 +44,11 @@ export const AuthLeftPanel: React.FC<AuthLeftPanelProps> = ({
         <div className="flex items-center justify-center gap-4 sm:gap-5 select-none">
           <img
             src="/logo.png"
-            alt="Authentix Logo"
+            alt="VeriCert Logo"
             className="w-20 h-20 md:w-26 md:h-26 object-contain drop-shadow-[0_8px_24px_rgba(61,135,108,0.2)] hover:scale-105 transition-transform duration-300"
           />
           <span className="text-4xl md:text-5xl font-black tracking-widest text-white uppercase">
-            AUTHENTI<span className="text-[#3D876C]">X</span>
+            VERI<span className="text-[#3D876C]">CERT</span>
           </span>
         </div>
 

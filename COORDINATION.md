@@ -1,149 +1,83 @@
-# 🤝 Coordination: Pery Somnang ↔ Sean Pheavyrak Sonya
+# 🤝 VeriCert Project Coordination & Competition Roadmap
 
-This file lists everything Pery needs from Sean (and vice versa) to keep the project moving.
-Discuss at every Monday meeting.
-
----
-
-## Week 1 — Confirm DB choice
-
-**Ask Sean:**
-> "Are we using PostgreSQL (Prisma) or MongoDB (Mongoose)? Both are installed. I've configured Prisma + PostgreSQL — please confirm so I don't set up the wrong connection."
-
-**Action for Sean:** Confirm database. If PostgreSQL, share the `DATABASE_URL` for the shared dev server.
-Current setup: Prisma + PostgreSQL (see `backend/prisma/schema.prisma`).
+This document outlines team responsibilities, API contracts, environment checklists, and competition presentation goals for **VeriCert**.
 
 ---
 
-## Week 2 — User schema
+## 🎯 Competition Project Overview
 
-**Ask Sean:**
-> "I've defined the `User` model in `prisma/schema.prisma` (id, email, password, name, role). Does it match what you're building for user schema + password hashing? Let me know if you need extra fields."
-
-**What Pery provides:** JWT auth middleware (`src/middleware/auth.js`) using the `User.id` from the DB.
-**What Sean provides:** Confirm the User model matches. Sean runs `npm run db:migrate` for Week 2.
+- **Project Name**: VeriCert (Next-Gen Blockchain Certificate Platform)
+- **Tagline**: Decentralized, tamper-proof academic and professional credential verification powered by Polygon
+- **Target Audience / Judges**: Universities, accreditation bodies, employers, and competition review panels
 
 ---
 
-## Week 3 — Certificate model
+## 👥 Core Technical Roles
 
-**Ask Sean:**
-> "The Certificate model is in `prisma/schema.prisma`. It has: title, recipientName, recipientEmail, issuedAt, expiresAt, fileUrl, hash, txHash, blockNumber. Is that enough for your certificate storage logic, or do you need more fields?"
-
-**What Pery provides:** Certificate creation API that creates the DB record.
-**What Sean provides:** Confirm the model, run migrations, verify data is stored correctly.
-
----
-
-## Week 4 — File storage path
-
-**Ask Sean:**
-> "PDFs are saved to `/uploads/cert_<id>.pdf` on the server and the URL is stored as `fileUrl` in the Certificate record. Is that format okay for your storage handling, or do you want to use Supabase Storage / S3?"
-
-**If using cloud storage:** Tell Pery which bucket/URL format to save in `fileUrl`.
+| Role | Domain | Responsibilities |
+|---|---|---|
+| **Fullstack Lead** | Next.js API & Architecture | Next.js App Router Route Handlers, authentication (JWT + 2FA), PDF generation, storage integration |
+| **Frontend Lead** | UI/UX & Portal | React 19 UI, dashboard analytics, visual template designer, QR scanner, public verification |
+| **Blockchain Lead** | Web3 & Smart Contracts | Solidity contract design, Polygon Amoy deployment, gas optimization, ethers.js v6 integration |
 
 ---
 
-## Week 5 — Hash format agreement
+## 📋 Integration Specifications
 
-**Ask Sean:**
-> "The hash I generate is a hex SHA-256 string (64 chars, e.g. `a3f2c1...`). Is that the format you'll be storing and comparing in the DB? Confirm so we don't have a mismatch on verification."
+### 1. Database Schema (Prisma / PostgreSQL)
+- **`Institution`**: Authentication credentials, 2FA secret, profile information.
+- **`Template`**: Visual certificate templates, background asset paths, dynamic field coordinates (`placeholders`).
+- **`Certificate`**: Student/recipient details, issuance dates, SHA-256 cryptographic hash, on-chain transaction hash (`txHash`), block number, contract address.
 
-**Agreed format:** `String` field `hash` on the `Certificate` model, `@unique`. SHA-256 hex, 64 chars.
+### 2. Cryptographic Hash Agreement
+- **Algorithm**: Standard SHA-256
+- **Format**: 64-character lowercase hexadecimal string (`hash`)
+- **Blockchain Storage**: Converted to `bytes32` (`0x...`) when writing to the Solidity smart contract.
 
----
-
-## Week 6 — Verification response shape
-
-**Ask Sean:**
-> "When a user uploads a PDF to verify it, my API hashes it and looks it up in the DB. Your Week 6 task is to compare the hash and return ✅/❌. Can we agree on the response shape so the frontend knows what to display?"
-
-**Agreed response (from `verifyController.js`):**
+### 3. Public Verification Endpoint (`GET /api/verification/:certificateId`)
 ```json
 {
-  "valid": true | false,
-  "status": "VALID" | "INVALID" | "NOT_FOUND",
-  "certificate": { "id", "title", "recipientName", "issuedAt", "issuerName", "txHash" },
-  "blockchain": { "exists", "revoked", "issuerAddress", "issuedAt", "certId" },
-  "hash": "sha256hex..."
+  "valid": true,
+  "blockchainStatus": "VALID",
+  "certificate": {
+    "certificateId": "VC-2026-DEMO-0001",
+    "recipientName": "Alex Rivera",
+    "recipientId": "STU-88921",
+    "course": "Advanced Blockchain Architecture",
+    "grade": "Distinction",
+    "issueDate": "2026-09-29T00:00:00.000Z",
+    "status": "issued",
+    "issuedBy": "VeriCert Institute of Technology",
+    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "txHash": "0x3f5c71b689a946e3d23f2b45e7587efc37cf3a9033320f7961b7ee9c4456942c",
+    "blockNumber": 12948201,
+    "contractAddress": "0x1234567890123456789012345678901234567890"
+  },
+  "onChain": {
+    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exists": true,
+    "revoked": false,
+    "issuerAddress": "0x...",
+    "issuedAt": "2026-09-29T00:00:00.000Z",
+    "certId": "VC-2026-DEMO-0001"
+  }
 }
 ```
 
----
-
-## Week 7 — Wallet + testnet environment
-
-**Ask Sean:**
-> "For Week 7-8, you're setting up the MetaMask wallet and testnet environment. I need:
-> 1. The **wallet private key** for the deployer account (exported from MetaMask, never commit to git)
-> 2. The **RPC URL** for Polygon Amoy (default: `https://rpc-amoy.polygon.technology`)
-> 3. A PolygonScan API key (optional, for contract verification)
-> 4. Some testnet MATIC — get it from https://faucet.polygon.technology/
->
-> Once you have these, add them to `backend/.env` as `WALLET_PRIVATE_KEY`, `POLYGON_RPC_URL`, `POLYGONSCAN_API_KEY`."
-
-**What Pery provides:** Smart contract code in `contracts/CertificateVerification.sol` (ready to deploy).
+### 4. QR Code Format
+- **Target URL**: `{FRONTEND_URL}/verify/{certificateId}`
+- **Example**: `http://localhost:5173/verify/VC-2026-DEMO-0001`
+- Instantly directs camera scans and mobile devices to the public verification portal.
 
 ---
 
-## Week 8 — Share contract address + ABI after deployment
+## 🏆 Competition Presentation Checklist
 
-**Pery tells Sean after deploying:**
-> "Contract deployed at `CONTRACT_ADDRESS=0x...` on Polygon Amoy. Add it to `backend/.env`.
-> The ABI is in `backend/src/utils/blockchain.js` (the `CONTRACT_ABI` constant). Use this for your ethers.js integration."
-
-**What Sean does with it:** Week 8 — integrate ethers.js, call `storeCertificate()` when anchoring hashes.
-
----
-
-## Week 9 — Sync DB + blockchain logic
-
-**Discuss with Sean:**
-> "My `verifyController.js` does:
-> 1. Look up certificate in DB by ID or file hash
-> 2. If `CONTRACT_ADDRESS` is set, call `verifyCertificate(hash)` on-chain
-> 3. Return both DB result + blockchain result
->
-> Your task is to sync DB + blockchain. Can you make sure the `txHash` and `blockNumber` fields are stored in the Certificate record after anchoring? I read those fields in the verify response."
-
----
-
-## Week 10 — QR code URL format
-
-**Already agreed:**
-QR encodes: `{CLIENT_URL}/verify/{certId}`
-Example: `http://localhost:3000/verify/uuid-abc-123`
-
-This hits `GET /api/verify/:id` on the backend.
-March (frontend) needs to handle the `/verify/:id` route.
-
-**Tell March:** QR points to `/verify/:id`, display the verification result from `GET /api/verify/:id`.
-
----
-
-## Week 11 — Edge cases (Sean's task, Pery to support)
-
-Sean handles edge cases. Pery's API already supports:
-- ✅ Tampered file → hash mismatch → `status: "INVALID"`
-- ✅ Unknown certificate ID → `status: "NOT_FOUND"`
-- ✅ Revoked certificate → `revoked: true` in blockchain response
-
-**Ask Sean to test:** Upload a slightly modified PDF and confirm the API returns `INVALID`.
-
----
-
-## Summary Table
-
-| Week | What to ask Sean | Sean provides |
-|------|-----------------|---------------|
-| 1 | Confirm PostgreSQL vs MongoDB | Confirm, share DATABASE_URL |
-| 2 | Confirm User schema fields | User model + migrations |
-| 3 | Confirm Certificate schema fields | Certificate model |
-| 4 | Confirm fileUrl / storage format | Confirm or provide cloud storage URL |
-| 5 | Confirm hash string format (SHA-256 hex) | Confirm storage, uniqueness |
-| 6 | Agree on verify response shape | Confirm / adjust DB queries |
-| 7 | **Share wallet private key + testnet MATIC** | WALLET_PRIVATE_KEY, RPC URL |
-| 8 | After deploy: share CONTRACT_ADDRESS + ABI | Ethers.js integration |
-| 9 | Confirm txHash/blockNumber stored in DB | DB-blockchain sync |
-| 10 | Confirm QR URL format with March | QR verification endpoint |
-| 11 | Test edge cases together | Edge case DB handling |
+- [x] Modern Next.js App Router backend implemented
+- [x] Zero-warning compilation and clean CORS configuration
+- [x] Visual template canvas designer with coordinate mapping
+- [x] Vector PDF generator with high-resolution QR integration
+- [x] Real-time SHA-256 file upload tamper analysis
+- [x] Polygon Amoy testnet smart contract anchoring
+- [x] One-command database seeder for live jury demonstrations (`npm run db:seed`)
+- [x] Consistent **VeriCert** branding across frontend, backend, and documentation

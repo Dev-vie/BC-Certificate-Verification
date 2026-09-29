@@ -25,7 +25,7 @@ export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
       return true;
     }
     try {
-      const saved = localStorage.getItem("authentix_sidebar_collapsed");
+      const saved = localStorage.getItem("vericert_sidebar_collapsed");
       return saved ? JSON.parse(saved) : false;
     } catch {
       return false;
@@ -49,7 +49,7 @@ export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
     if (!isMobile) {
       try {
         localStorage.setItem(
-          "authentix_sidebar_collapsed",
+          "vericert_sidebar_collapsed",
           JSON.stringify(isCollapsed),
         );
       } catch {

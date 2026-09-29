@@ -40,7 +40,7 @@ const PRESET_DATA = {
     issueDate: "June 28, 2026",
     email: "amara.okafor@example.com",
     grade: "Distinction",
-    institutionName: "Authentix Academy of Technology",
+    institutionName: "VeriCert Academy of Technology",
   },
   longName: {
     recipientName: "Dr. Alexander Montgomery-Cunningham III",
@@ -377,7 +377,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                     {field.id === "qrCode" ? (
                       <div className="w-full h-full flex items-center justify-center p-1">
                         <QRCodeSVG
-                          value="https://authentix.io/verify/SAMPLE-VERIFY-ID"
+                          value="https://vericert.io/verify/SAMPLE-VERIFY-ID"
                           size={Math.min(field.width, field.height) * 0.9}
                         />
                       </div>
@@ -627,7 +627,7 @@ export const TemplatePreviewTab: React.FC<TemplatePreviewTabProps> = ({
                 onChange={(e) =>
                   handleFieldChange("institutionName", e.target.value)
                 }
-                placeholder="e.g. Authentix Academy"
+                placeholder="e.g. VeriCert Academy"
                 className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-[#3D876C]"
               />
             </div>

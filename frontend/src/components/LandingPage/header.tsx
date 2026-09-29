@@ -125,11 +125,11 @@ export function Header({
         >
           <img
             src="/logo.png"
-            alt="Authentix Logo"
+            alt="VeriCert Logo"
             className="w-10 h-10 object-contain group-hover:scale-105 transition-transform"
           />
           <span className="font-bold text-[var(--lp-foreground)] text-xl tracking-tight">
-            Authenti<span className="text-[#3D876C]">x</span>
+            Veri<span className="text-[#3D876C]">Cert</span>
           </span>
         </Link>
 

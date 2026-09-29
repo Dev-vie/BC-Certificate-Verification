@@ -160,7 +160,7 @@ export const Subscription: React.FC = () => {
 
               {plan.name === "Enterprise" ? (
                 <a
-                  href="mailto:support@authentix.com"
+                  href="mailto:support@vericert.io"
                   className="w-full text-center py-3 px-4 rounded-lg font-bold text-xs cursor-pointer tracking-wider uppercase transition-all bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/5"
                 >
                   {plan.cta}
@@ -192,7 +192,7 @@ export const Subscription: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider">Stay updated</span>
             </div>
             <h3 className="text-2xl font-bold tracking-tight mb-2">
-              Subscribe to the Authentix Newsletter
+              Subscribe to the VeriCert Newsletter
             </h3>
             <p className="text-slate-400 text-xs leading-relaxed">
               Get monthly updates on blockchain security, certificate template designs, and industry verification standards delivered directly to your inbox.

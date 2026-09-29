@@ -20,7 +20,7 @@ export const CertificateDetailPage: React.FC = () => {
   const localCert = useMemo(() => {
     if (certificate || !id) return null;
     try {
-      const saved = localStorage.getItem("authentix_certificates");
+      const saved = localStorage.getItem("vericert_certificates") || localStorage.getItem("authentix_certificates");
       if (saved) {
         const list = JSON.parse(saved);
         if (Array.isArray(list)) {

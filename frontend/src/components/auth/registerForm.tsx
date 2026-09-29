@@ -127,7 +127,7 @@ const RegisterForm: React.FC = () => {
 
       <AuthLeftPanel
         title="Create Institution Workspace"
-        subtitle="Join Authentix to establish your decentralized identity, issue tamper-proof certificates, and automate credential verification."
+        subtitle="Join VeriCert to establish your decentralized identity, issue tamper-proof certificates, and automate credential verification."
         backLink="/"
         backText="Back to website"
       />
@@ -279,11 +279,11 @@ const RegisterForm: React.FC = () => {
             <div className="p-6 overflow-y-auto space-y-4 text-slate-300 text-xs leading-relaxed max-h-[50vh]">
               <p className="font-semibold text-white">Last updated: August 28, 2026</p>
               
-              <p>Welcome to Authentix. By creating an account or using our blockchain certificate verification system, you agree to comply with and be bound by the following terms of service:</p>
+              <p>Welcome to VeriCert. By creating an account or using our blockchain certificate verification system, you agree to comply with and be bound by the following terms of service:</p>
 
               <div>
                 <h4 className="font-bold text-white mb-1">1. Issuer Responsibility</h4>
-                <p>Institutions are solely responsible for the accuracy, validity, and legitimacy of all academic credentials, certificates, and student records uploaded, generated, or issued through the Authentix platform.</p>
+                <p>Institutions are solely responsible for the accuracy, validity, and legitimacy of all academic credentials, certificates, and student records uploaded, generated, or issued through the VeriCert platform.</p>
               </div>
 
               <div>
@@ -293,7 +293,7 @@ const RegisterForm: React.FC = () => {
 
               <div>
                 <h4 className="font-bold text-white mb-1">3. Workspace &amp; Key Security</h4>
-                <p>You are entirely responsible for maintaining the confidentiality of your account credentials, passwords, API keys, and multi-factor authentication (2FA) tokens. Authentix is not liable for any losses arising from security breaches on your end.</p>
+                <p>You are entirely responsible for maintaining the confidentiality of your account credentials, passwords, API keys, and multi-factor authentication (2FA) tokens. VeriCert is not liable for any losses arising from security breaches on your end.</p>
               </div>
 
               <div>
@@ -303,7 +303,7 @@ const RegisterForm: React.FC = () => {
 
               <div>
                 <h4 className="font-bold text-white mb-1 font-sans">5. Limitation of Liability</h4>
-                <p>Authentix provides decentralized credential infrastructure "as is" and holds no liability for network outages, blockchain transaction delays, gas fee fluctuations, or validating decisions made by third parties.</p>
+                <p>VeriCert provides decentralized credential infrastructure "as is" and holds no liability for network outages, blockchain transaction delays, gas fee fluctuations, or validating decisions made by third parties.</p>
               </div>
             </div>
 

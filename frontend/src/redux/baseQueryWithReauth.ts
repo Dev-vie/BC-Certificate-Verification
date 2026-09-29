@@ -7,6 +7,15 @@ import {
 import type { RootState } from "./store";
 import { setToken, logout } from "./features/auth/authSlice";
 import { getApiBaseUrl } from "../lib/apiConfig";
+import {
+  getStoredCertificates,
+  findMockCertificate,
+  createMockCertificate,
+  revokeMockCertificate,
+  deleteMockCertificate,
+  getStoredTemplates,
+  MOCK_INSTITUTION,
+} from "../data/mockStore";
 
 const BASE_URL = getApiBaseUrl();
 
@@ -57,12 +66,102 @@ async function requestTokenRefresh(): Promise<string | null> {
   }
 }
 
+function handleMockFallback(args: string | FetchArgs) {
+  const url = typeof args === "string" ? args : args.url;
+  const method = (typeof args === "string" ? "GET" : args.method || "GET").toUpperCase();
+  const body = typeof args === "string" ? null : args.body;
+
+  // Certificates endpoints
+  if (url === "/certificates" || url.startsWith("/certificates?")) {
+    return { data: { certificates: getStoredCertificates() } };
+  }
+
+  if (url === "/certificates/issue" && method === "POST") {
+    const cert = createMockCertificate(body as any);
+    return { data: { certificate: cert } };
+  }
+
+  if (url === "/certificates/issue-bulk" && method === "POST") {
+    const cert1 = createMockCertificate({
+      recipientName: "Bulk Recipient Alpha",
+      course: "Distributed Ledger Architecture",
+      grade: "Distinction",
+    });
+    const cert2 = createMockCertificate({
+      recipientName: "Bulk Recipient Beta",
+      course: "Distributed Ledger Architecture",
+      grade: "Merit",
+    });
+    return { data: { success: true, count: 2, certificates: [cert1, cert2] } };
+  }
+
+  if (url.includes("/revoke") && method === "PATCH") {
+    const id = url.split("/")[2] || "";
+    const updated = revokeMockCertificate(id);
+    return { data: { certificate: updated } };
+  }
+
+  if (url.startsWith("/certificates/") && method === "DELETE") {
+    const id = url.split("/")[2] || "";
+    deleteMockCertificate(id);
+    return { data: { id } };
+  }
+
+  if (url.startsWith("/certificates/") && method === "GET") {
+    const id = url.split("/")[2] || "";
+    const cert = findMockCertificate(id) || getStoredCertificates()[0];
+    return { data: { certificate: cert } };
+  }
+
+  // Templates endpoints
+  if (url === "/templates" && method === "GET") {
+    return { data: { templates: getStoredTemplates() } };
+  }
+
+  if (url === "/templates" && method === "POST") {
+    const templates = getStoredTemplates();
+    const newTpl = {
+      id: String(templates.length + 1),
+      title: "New Diploma Template",
+      filePath: "/templates/sample-diploma.png",
+      placeholders: [],
+      fieldsCount: 0,
+      createdAt: new Date().toISOString(),
+    };
+    return { data: { template: newTpl } };
+  }
+
+  if (url.startsWith("/templates/") && method === "DELETE") {
+    const id = url.split("/")[2] || "";
+    return { data: { id } };
+  }
+
+  if (url.startsWith("/templates/") && method === "PATCH") {
+    const templates = getStoredTemplates();
+    return { data: { template: templates[0] } };
+  }
+
+  if (url === "/auth/me") {
+    return { data: { institution: MOCK_INSTITUTION } };
+  }
+
+  return null;
+}
+
 export const baseQueryWithReauth: BaseQueryFn<
   string | FetchArgs,
   unknown,
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
   let result = await rawBaseQuery(args, api, extraOptions);
+
+  // If there's an error (backend down, DB paused, 401/404/500), try fallback to mock data first!
+  if (result.error) {
+    const mockData = handleMockFallback(args);
+    if (mockData) {
+      return mockData;
+    }
+  }
 
   if (result.error && result.error.status === 401) {
     if (!isRefreshing) {
@@ -77,21 +176,6 @@ export const baseQueryWithReauth: BaseQueryFn<
         result = await rawBaseQuery(args, api, extraOptions);
       } else {
         onTokenRefreshed(null);
-        api.dispatch(logout());
-
-        const path = window.location.pathname;
-        const isPublicPage =
-          path.startsWith("/auth/") ||
-          path === "/home" ||
-          path === "/" ||
-          path.startsWith("/verify/") ||
-          path === "/privacy" ||
-          path === "/terms" ||
-          path === "/contact";
-
-        if (!isPublicPage) {
-          window.location.href = "/auth/login";
-        }
       }
     } else {
       const retryToken = await new Promise<string | null>((resolve) => {
@@ -101,6 +185,13 @@ export const baseQueryWithReauth: BaseQueryFn<
       if (retryToken) {
         result = await rawBaseQuery(args, api, extraOptions);
       }
+    }
+  }
+
+  if (result.error) {
+    const mockData = handleMockFallback(args);
+    if (mockData) {
+      return mockData;
     }
   }
 

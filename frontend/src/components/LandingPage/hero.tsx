@@ -169,7 +169,7 @@ export function Hero() {
                   >
                     <img
                       src={heroImage}
-                      alt="Authentix Secure Credentials Portal - Front"
+                      alt="VeriCert Secure Credentials Portal - Front"
                       className="w-full h-auto object-contain select-none pointer-events-none shadow-orbit-hover"
                     />
                   </div>
@@ -185,7 +185,7 @@ export function Hero() {
                   >
                     <img
                       src={certificateBackImage}
-                      alt="Authentix Secure Credentials Portal - Back"
+                      alt="VeriCert Secure Credentials Portal - Back"
                       className="w-full h-auto object-contain select-none pointer-events-none shadow-orbit-hover"
                     />
                   </div>

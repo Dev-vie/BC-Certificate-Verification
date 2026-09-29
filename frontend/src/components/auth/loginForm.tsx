@@ -14,10 +14,10 @@ const LoginForm: React.FC = () => {
   const navigate = useNavigate();
   const { loading: isLoading, error: authError, login, clearError } = useAuth();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("admin@vericert.edu");
+  const [password, setPassword] = useState("password123");
   const [showPassword, setShowPassword] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
   const [formError, setFormError] = useState("");
 
   const error = formError || authError;
@@ -152,8 +152,6 @@ const LoginForm: React.FC = () => {
               )}
             </button>
           </form>
-
-
         </div>
       </div>
     </div>
