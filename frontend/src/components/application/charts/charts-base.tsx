@@ -28,7 +28,7 @@ export const selectEvenlySpacedItems = <T extends readonly unknown[]>(dataArray:
 };
 
 export const ChartLegendContent = ({ reversed, payload, align, layout, className }: LegendContentProps & { reversed?: boolean; className?: string }) => {
-    payload = reversed ? payload?.toReversed() : payload;
+    payload = reversed ? [...(payload || [])].reverse() : payload;
 
     return (
         <ul

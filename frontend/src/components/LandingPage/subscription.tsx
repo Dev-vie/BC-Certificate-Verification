@@ -102,7 +102,7 @@ export const Subscription: React.FC = () => {
 
         {/* Subscription Plans Cards */}
         <div className="flex flex-col lg:flex-row gap-8 items-center justify-center mb-24 max-w-6xl mx-auto">
-          {plans.map((plan, idx) => (
+          {plans.map((plan) => (
             <div
               key={plan.name}
               className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 border bg-slate-900/60 backdrop-blur-xl w-full ${

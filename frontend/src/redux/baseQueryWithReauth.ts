@@ -5,7 +5,7 @@ import {
   type FetchBaseQueryError,
 } from "@reduxjs/toolkit/query/react";
 import type { RootState } from "./store";
-import { setToken, logout } from "./features/auth/authSlice";
+import { setToken } from "./features/auth/authSlice";
 import { getApiBaseUrl } from "../lib/apiConfig";
 import {
   getStoredCertificates,
