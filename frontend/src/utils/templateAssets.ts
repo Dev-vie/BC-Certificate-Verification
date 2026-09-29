@@ -49,11 +49,16 @@ async function renderPdfFirstPageToBlobUrl(pdfBlob: Blob): Promise<string> {
 }
 
 export async function renderTemplatePreview(fileUrl: string): Promise<string> {
+  if (!fileUrl) return "";
   if (looksLikeImage(fileUrl)) {
-    const blob = await fetchAsBlob(fileUrl);
-    return URL.createObjectURL(blob);
+    return fileUrl;
   }
 
-  const pdfBlob = await fetchAsBlob(fileUrl);
-  return renderPdfFirstPageToBlobUrl(pdfBlob);
+  try {
+    const pdfBlob = await fetchAsBlob(fileUrl);
+    return await renderPdfFirstPageToBlobUrl(pdfBlob);
+  } catch (err) {
+    console.warn("Could not rasterize PDF template preview:", err);
+    return fileUrl;
+  }
 }

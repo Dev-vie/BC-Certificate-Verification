@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   Lock,
   CircleHelp,
+  Sparkles,
 } from "lucide-react";
 import { Scanner, useDevices } from "@yudiel/react-qr-scanner";
 import { motion, AnimatePresence } from "motion/react";
@@ -41,6 +42,7 @@ export function Verify() {
   const [activeTab, setActiveTab] = useState<VerifyTab>("upload");
   const [isHowItWorksOpen, setIsHowItWorksOpen] = useState(false);
   const [_progress, setProgress] = useState(0);
+  const [manualQuery, setManualQuery] = useState("");
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isCalculatingHash, setIsCalculatingHash] = useState(false);
@@ -289,6 +291,120 @@ export function Verify() {
                             </Button>
                           </div>
                         )}
+
+                        {/* Sample Credential Records */}
+                        <div className="pt-2 border-t border-white/10 space-y-3">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-1.5">
+                              <Sparkles className="w-3.5 h-3.5 text-[#4ca385]" />
+                              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
+                                Try Sample Certificates:
+                              </span>
+                            </div>
+                            <span className="text-[10px] text-[#4ca385] font-semibold bg-[#3D876C]/15 px-2 py-0.5 rounded-full border border-[#3D876C]/30">
+                              Public Registry
+                            </span>
+                          </div>
+
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button
+                              type="button"
+                              onClick={() => handleExecuteVerification("VC-2026-BLOCK-9842")}
+                              className="p-3 rounded-xl bg-slate-900/60 hover:bg-[#3D876C]/10 border border-white/10 hover:border-[#3D876C]/50 text-left transition-all cursor-pointer group shadow-sm hover:scale-[1.01]"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-white group-hover:text-[#4ca385]">
+                                  Alex Rivera &bull; Valid Diploma
+                                </span>
+                                <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">
+                                  VALID
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 truncate mt-1">
+                                Blockchain Architecture & Smart Contracts
+                              </p>
+                            </button>
+
+                            <button
+                              type="button"
+                              onClick={() => handleExecuteVerification("VC-2026-AI-7719")}
+                              className="p-3 rounded-xl bg-slate-900/60 hover:bg-[#3D876C]/10 border border-white/10 hover:border-[#3D876C]/50 text-left transition-all cursor-pointer group shadow-sm hover:scale-[1.01]"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-white group-hover:text-[#4ca385]">
+                                  Elena Rostova &bull; Summa Cum Laude
+                                </span>
+                                <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">
+                                  99%
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 truncate mt-1">
+                                AI Distributed Neural Systems
+                              </p>
+                            </button>
+
+                            <button
+                              type="button"
+                              onClick={() => handleExecuteVerification("VC-2026-REVOKED-0012")}
+                              className="p-3 rounded-xl bg-rose-950/20 hover:bg-rose-950/40 border border-rose-500/30 hover:border-rose-500/60 text-left transition-all cursor-pointer group shadow-sm hover:scale-[1.01]"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-rose-300 group-hover:text-rose-200">
+                                  Marcus Vance &bull; Revoked Alert
+                                </span>
+                                <span className="text-[10px] px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 font-mono font-bold">
+                                  REVOKED
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-rose-300/80 truncate mt-1">
+                                Simulates Fraud &amp; Smart Contract Invalidation
+                              </p>
+                            </button>
+
+                            <button
+                              type="button"
+                              onClick={() => handleExecuteVerification("VC-2026-CYBER-3301")}
+                              className="p-3 rounded-xl bg-slate-900/60 hover:bg-[#3D876C]/10 border border-white/10 hover:border-[#3D876C]/50 text-left transition-all cursor-pointer group shadow-sm hover:scale-[1.01]"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-white group-hover:text-[#4ca385]">
+                                  Kwame Asante &bull; ZK-Proof
+                                </span>
+                                <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">
+                                  ZK-SNARK
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 truncate mt-1">
+                                Zero-Knowledge Cryptography &amp; Security
+                              </p>
+                            </button>
+                          </div>
+
+                          {/* Direct Manual ID / Hash Input */}
+                          <div className="pt-2 flex gap-2">
+                            <input
+                              type="text"
+                              value={manualQuery}
+                              onChange={(e) => setManualQuery(e.target.value)}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter" && manualQuery.trim()) {
+                                  handleExecuteVerification(manualQuery);
+                                }
+                              }}
+                              placeholder="Or enter any Certificate ID (e.g. VC-2026-BLOCK-9842) / Hash..."
+                              className="flex-1 px-4 py-2.5 bg-slate-900/90 border border-white/15 rounded-xl text-xs text-white placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#4ca385]"
+                            />
+                            <Button
+                              size="sm"
+                              type="button"
+                              onClick={() => manualQuery.trim() && handleExecuteVerification(manualQuery)}
+                              disabled={!manualQuery.trim() || isFetching}
+                              className="bg-[#3D876C] hover:bg-[#2C6450] text-white px-4 text-xs font-bold rounded-xl cursor-pointer"
+                            >
+                              Verify ID
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                     ) : (
                       <div className="flex flex-col items-center justify-center py-4 text-center space-y-4 w-full">

@@ -86,8 +86,10 @@ export const CardWithImage = ({
   const menuRef = useRef<HTMLDivElement>(null);
   const [coverUrl, setCoverUrl] = useState<string | null>(null);
   const [isLoadingCover, setIsLoadingCover] = useState(false);
+  const [hasImgError, setHasImgError] = useState(false);
 
   useEffect(() => {
+    setHasImgError(false);
     if (!templateFileUrl) {
       setCoverUrl(null);
       return;
@@ -151,10 +153,11 @@ export const CardWithImage = ({
     >
       {/* Top section: uploaded template preview or colorful fallback header */}
       <div className="relative w-full aspect-[16/9] bg-background/50 overflow-hidden flex items-center justify-center border-b border-border/40">
-        {coverUrl ? (
+        {coverUrl && !hasImgError ? (
           <img
             src={coverUrl}
             alt={title}
+            onError={() => setHasImgError(true)}
             className="w-full h-full object-cover object-top"
           />
         ) : isLoadingCover ? (
