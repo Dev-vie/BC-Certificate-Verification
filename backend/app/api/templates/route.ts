@@ -50,7 +50,7 @@ export async function GET(req: Request) {
       });
 
       if (templates && templates.length > 0) {
-        const parsedTemplates = templates.map((t) => {
+        const parsedTemplates = templates.map((t: any) => {
           let p: any = t.placeholders;
           if (typeof p === "string") {
             try { p = JSON.parse(p); } catch { p = []; }
